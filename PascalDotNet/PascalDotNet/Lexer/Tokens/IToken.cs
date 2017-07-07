@@ -1,0 +1,7 @@
+﻿namespace PascalDotNet.Lexer.Tokens
+{
+	public interface IToken
+	{
+		string Value{get;}
+	}
+}
