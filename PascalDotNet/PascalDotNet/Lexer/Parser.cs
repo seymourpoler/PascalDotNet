@@ -2,8 +2,8 @@
 {
 	public class Parser
 	{
-		private readonly Tokenizer _tokenizer;
-		public Parser(Tokenizer tokenizer)
+		private readonly ITokenizer _tokenizer;
+		public Parser(ITokenizer tokenizer)
 		{
 			_tokenizer = tokenizer;
 		}
