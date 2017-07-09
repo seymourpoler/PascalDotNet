@@ -4,7 +4,12 @@ using PascalDotNet.Lexer.Tokens;
 
 namespace PascalDotNet.Lexer
 {
-    public class Tokenizer
+	public interface ITokenizer
+	{
+		IToken NextToken{ get;}
+	}
+
+	public class Tokenizer : ITokenizer
     {
 		private readonly Text _text;
 
