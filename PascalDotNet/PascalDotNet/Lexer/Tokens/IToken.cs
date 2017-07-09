@@ -3,5 +3,6 @@
 	public interface IToken
 	{
 		string Value{get;}
+		bool IsAnOperator{get;}
 	}
 }
