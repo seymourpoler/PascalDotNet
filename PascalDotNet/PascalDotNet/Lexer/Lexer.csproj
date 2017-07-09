@@ -71,6 +71,7 @@
     <Compile Include="UnExpectedTokenException.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Operator.cs" />
+    <Compile Include="NotAnOperatorException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

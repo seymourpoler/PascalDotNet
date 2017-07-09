@@ -4,5 +4,6 @@
 	{
 		string Value{get;}
 		bool IsAnOperator{get;}
+		Operator Operator{get;}
 	}
 }

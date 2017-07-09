@@ -4,6 +4,7 @@
 	{
 		public string Value {get;}
 		public bool IsAnOperator{get{return false;}}
+		public Operator Operator{get{throw new NotAnOperatorException ();}}
 
 		public DecimalToken (string value)
 		{

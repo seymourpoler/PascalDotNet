@@ -4,6 +4,7 @@
 	{
 		public string Value{ get; private set;}
 		public bool IsAnOperator{get{return false;}}
+		public Operator Operator{get{throw new NotAnOperatorException ();}}
 
 		public CommentStartToken (string value)
 		{
