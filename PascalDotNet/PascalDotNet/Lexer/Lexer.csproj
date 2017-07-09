@@ -70,6 +70,7 @@
     <Compile Include="StringExtensions.cs" />
     <Compile Include="UnExpectedTokenException.cs" />
     <Compile Include="Parser.cs" />
+    <Compile Include="Operator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
