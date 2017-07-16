@@ -79,7 +79,6 @@ namespace PascalDotNet.Lexer
 				}
 			}
 			return false;
-
 		}
 
 		static bool IsAnInteger(string token)

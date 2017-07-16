@@ -7,7 +7,7 @@ namespace PascalDotNet.Lexer.Tests
 {
 	[TestFixture]
 	public class TokenizerTests
-    {
+	{
 		[Test]
 		public void ReturnsEndOfFileTokenWhenIsAtEndOfFile()
 		{
@@ -425,5 +425,5 @@ namespace PascalDotNet.Lexer.Tests
 
 			action.ShouldThrow<UnExpectedTokenException> ();
 		}
-    }
+	}
 }

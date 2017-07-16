@@ -10,7 +10,7 @@ namespace PascalDotNet.Lexer
 	}
 
 	public class Tokenizer : ITokenizer
-    {
+	{
 		private readonly Text _text;
 
 		public IToken NextToken
@@ -118,10 +118,10 @@ namespace PascalDotNet.Lexer
 			}
 		}
 
-        public Tokenizer(string text)
-        {
+		public Tokenizer(string text)
+		{
 			_text = new Text (text);
-        }
+		}
 
 		private IToken BuildKeywordOrIdentifierToken(char character)
 		{
@@ -252,5 +252,5 @@ namespace PascalDotNet.Lexer
 			}
 			return new ColonToken (character.ToString ());
 		}
-    }
+	}
 }
