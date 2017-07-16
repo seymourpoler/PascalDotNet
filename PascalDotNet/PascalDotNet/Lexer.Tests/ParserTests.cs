@@ -27,7 +27,7 @@ namespace PascalDotNet.Lexer.Tests
 			tokenizer.SetupSequence (x => x.NextToken)
 				.Returns (new KeyWordToken ("Progra"))
 				.Returns (new IdentifierToken ("Test"))
-				.Returns (new SemiColonToken (";"));
+				.Returns (new SemiColonToken ());
 
 			Action action = () => parser.Parse ();
 
@@ -54,7 +54,7 @@ namespace PascalDotNet.Lexer.Tests
 			tokenizer.SetupSequence (x => x.NextToken)
 				.Returns (new KeyWordToken ("PROGRAM"))
 				.Returns (new IdentifierToken (programHeaderIdentificator))
-				.Returns (new SemiColonToken (";"));
+				.Returns (new SemiColonToken ());
 
 			var result = parser.Parse ();
 
