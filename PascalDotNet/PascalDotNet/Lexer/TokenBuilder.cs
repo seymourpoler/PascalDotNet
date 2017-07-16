@@ -41,6 +41,10 @@ namespace PascalDotNet.Lexer
 
 		public static IToken Build(string value)
 		{
+			if(IsAKeyWord(value) && ("program".IsEqualTo(value)))
+			{
+				return new ProgramToken ();
+			}
 			if(IsAKeyWord(value) && ("or".IsEqualTo(value)))
 			{
 				return new OrToken (value);

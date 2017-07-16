@@ -48,15 +48,15 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
-		public void ReturnsKeyWordTokenFromKeyWord()
+		public void ReturnsProgramTokenFromKeyWord()
 		{
-			var word = "Program";
+			var word = "PROGRAM";
 			var tokenizer = new Tokenizer (word);
 
 			var token = tokenizer.NextToken;
 
 			token.Value.Should ().Be (word);
-			token.Should ().BeOfType<KeyWordToken> ();
+			token.Should ().BeOfType<ProgramToken> ();
 		}
 
 		[Test]

@@ -75,6 +75,7 @@
     <Compile Include="Node.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Tokens\TokenComparator.cs" />
+    <Compile Include="Tokens\ProgramToken.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

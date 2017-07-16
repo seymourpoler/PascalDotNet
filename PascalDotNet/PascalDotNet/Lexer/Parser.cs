@@ -22,7 +22,7 @@ namespace PascalDotNet.Lexer
 		{
 			IToken token;
 			token = _tokenizer.NextToken;
-			if(!token.Equals(new KeyWordToken("Program")))
+			if(!token.Equals(new ProgramToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
