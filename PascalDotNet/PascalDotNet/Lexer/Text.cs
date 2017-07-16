@@ -2,9 +2,9 @@
 
 namespace PascalDotNet.Lexer
 {
-    public class Text
-    {
-        private readonly char[] _text;
+	public class Text
+	{
+		private readonly char[] _text;
 		private int _position;
 
 		public char NextCharacter
@@ -29,15 +29,15 @@ namespace PascalDotNet.Lexer
 			}
 		}
 
-        public Text(string text)
-        {
+		public Text(string text)
+		{
 			if(String.IsNullOrWhiteSpace(text))
 			{
 				throw new ArgumentNullException ();
 			}
 			_position = 0;
 			_text = text.ToCharArray();
-        }
+		}
 
 		public bool IsTheNextCharacter(char nextCharacter)
 		{
@@ -55,5 +55,5 @@ namespace PascalDotNet.Lexer
 			}
 			return predicate (_text[_position]);
 		}
-    }
+	}
 }
