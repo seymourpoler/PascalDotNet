@@ -11,6 +11,11 @@
 			Value = value;
 		}
 
+		public SemiColonToken ()
+		{
+			Value = ";";
+		} 
+
 		public bool Equals(IToken token)
 		{
 			return TokenComparator.Equals(this, token);

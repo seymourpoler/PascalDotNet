@@ -3,6 +3,7 @@ using NUnit.Framework;
 using PascalDotNet.Lexer.Tokens;
 using FluentAssertions;
 using System.Linq;
+using System;
 
 namespace PascalDotNet.Lexer.Tests
 {
@@ -18,6 +19,19 @@ namespace PascalDotNet.Lexer.Tests
 			tokenizer = new Mock<ITokenizer> ();
 			parser = new Parser (
 				tokenizer: tokenizer.Object);
+		}
+
+		[Test]
+		public void ThrowsUnExpectedTokenExceptionWhenKeyWordTokenIsWrong()
+		{
+			tokenizer.SetupSequence (x => x.NextToken)
+				.Returns (new KeyWordToken ("Progra"))
+				.Returns (new IdentifierToken ("Test"))
+				.Returns (new SemiColonToken (";"));
+
+			Action action = () => parser.Parse ();
+
+			action.ShouldThrow<UnExpectedTokenException> ();
 		}
 
 		[Test]

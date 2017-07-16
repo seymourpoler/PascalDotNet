@@ -22,7 +22,7 @@ namespace PascalDotNet.Lexer
 		{
 			IToken token;
 			token = _tokenizer.NextToken;
-			if(!token.Equals(new KeyWordToken(token.Value)))
+			if(!token.Equals(new KeyWordToken("Program")))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -38,7 +38,7 @@ namespace PascalDotNet.Lexer
 				nodes: new List<Node> {new Node(token.Value)});
 			
 			token = _tokenizer.NextToken;
-			if(!token.Equals(new SemiColonToken(token.Value)))
+			if(!token.Equals(new SemiColonToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
