@@ -94,4 +94,3 @@ namespace PascalDotNet.Lexer
 		}
 	}
 }
-
