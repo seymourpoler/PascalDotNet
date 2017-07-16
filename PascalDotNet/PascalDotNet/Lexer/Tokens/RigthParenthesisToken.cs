@@ -10,5 +10,10 @@
 		{
 			Value = value;
 		}
+
+		public bool Equals(IToken token)
+		{
+			return TokenComparator.Equals(this, token);
+		}
 	}
 }

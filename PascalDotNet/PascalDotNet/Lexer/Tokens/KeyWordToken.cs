@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PascalDotNet.Lexer.Tokens
+﻿namespace PascalDotNet.Lexer.Tokens
 {
 	public class KeyWordToken : IToken
 	{
@@ -11,6 +9,11 @@ namespace PascalDotNet.Lexer.Tokens
 		public KeyWordToken(string value)
 		{
 			Value = value;
+		}
+
+		public bool Equals(IToken token)
+		{
+			return TokenComparator.Equals(this, token);
 		}
 	}
 }

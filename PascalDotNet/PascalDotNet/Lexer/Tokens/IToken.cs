@@ -5,5 +5,6 @@
 		string Value{get;}
 		bool IsAnOperator{get;}
 		Operator Operator{get;}
+		bool Equals (IToken token);
 	}
 }

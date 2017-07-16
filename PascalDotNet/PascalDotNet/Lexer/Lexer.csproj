@@ -73,6 +73,8 @@
     <Compile Include="Operator.cs" />
     <Compile Include="NotAnOperatorException.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="Consts.cs" />
+    <Compile Include="Tokens\TokenComparator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

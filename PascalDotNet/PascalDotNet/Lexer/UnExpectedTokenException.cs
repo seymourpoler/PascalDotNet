@@ -2,7 +2,5 @@
 
 namespace PascalDotNet.Lexer
 {
-	public class UnExpectedTokenException : Exception
-	{
-	}
+	public class UnExpectedTokenException : Exception{}
 }
