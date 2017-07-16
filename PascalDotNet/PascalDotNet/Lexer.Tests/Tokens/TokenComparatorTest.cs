@@ -32,6 +32,15 @@ namespace PascalDotNet.Lexer.Tests.Tokens
 		}
 
 		[Test]
+		public void ReturnsTrueWhenBothHasNullValues()
+		{
+			var result = TokenComparator.Equals (new SemiColonToken(null), new SemiColonToken(null));
+
+			result.Should ().BeTrue ();
+		}
+
+
+		[Test]
 		public void ReturnsTrueAreEquals()
 		{
 			var result = TokenComparator.Equals (new SemiColonToken(";"), new SemiColonToken(";"));

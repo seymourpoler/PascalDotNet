@@ -14,10 +14,17 @@ namespace PascalDotNet.Lexer.Tokens
 			{
 				return false;
 			}
-			if(tokenFirst.Value != tokenSecond.Value)
+
+			if(String.IsNullOrWhiteSpace(tokenFirst.Value) && String.IsNullOrWhiteSpace(tokenSecond.Value))
+			{
+				return true;
+			}
+
+			if(tokenFirst.Value.ToLower() != tokenSecond.Value.ToLower())
 			{
 				return false;
 			}
+
 			return true;
 		}
 	}
