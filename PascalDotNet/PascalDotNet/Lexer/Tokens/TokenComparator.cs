@@ -15,6 +15,11 @@ namespace PascalDotNet.Lexer.Tokens
 				return false;
 			}
 
+			if(tokenFirst.GetType() != tokenSecond.GetType())
+			{
+				return false;
+			}
+
 			if(String.IsNullOrWhiteSpace(tokenFirst.Value) && String.IsNullOrWhiteSpace(tokenSecond.Value))
 			{
 				return true;
