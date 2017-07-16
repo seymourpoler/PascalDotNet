@@ -48,6 +48,21 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
+		public void ParseHeadingProgramWithUpperCase()
+		{
+			const string programHeaderIdentificator = "Test";
+			tokenizer.SetupSequence (x => x.NextToken)
+				.Returns (new KeyWordToken ("PROGRAM"))
+				.Returns (new IdentifierToken (programHeaderIdentificator))
+				.Returns (new SemiColonToken (";"));
+
+			var result = parser.Parse ();
+
+			result.Name.Should ().Be (Consts.PROGRAM_HEADING);
+			result.Nodes.First ().Name.Should ().Be (programHeaderIdentificator);
+		}
+
+		[Test]
 		public void ParseHeadingProgramWithOnlyIdentificator()
 		{
 			const string programHeaderIdentificator = "Test";
