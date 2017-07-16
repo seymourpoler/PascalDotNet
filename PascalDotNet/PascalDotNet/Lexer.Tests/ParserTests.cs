@@ -35,6 +35,19 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
+		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissing()
+		{
+			tokenizer.SetupSequence (x => x.NextToken)
+				.Returns (new KeyWordToken ("Progra"))
+				.Returns (new IdentifierToken ("Test"))
+				.Returns (new SemiColonToken ("VAR"));
+
+			Action action = () => parser.Parse ();
+
+			action.ShouldThrow<UnExpectedTokenException> ();
+		}
+
+		[Test]
 		public void ParseHeadingProgramWithOnlyIdentificator()
 		{
 			const string programHeaderIdentificator = "Test";
