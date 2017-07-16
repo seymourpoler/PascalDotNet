@@ -22,5 +22,21 @@ namespace PascalDotNet.Lexer.Tests.Tokens
 
 			result.Should ().BeFalse ();
 		}
+
+		[Test]
+		public void ReturnsFalseWhenHasDifferentValue()
+		{
+			var result = TokenComparator.Equals (new KeyWordToken("Key"), new KeyWordToken("Word"));
+
+			result.Should ().BeFalse ();
+		}
+
+		[Test]
+		public void ReturnsTrueAreEquals()
+		{
+			var result = TokenComparator.Equals (new SemiColonToken(";"), new SemiColonToken(";"));
+
+			result.Should ().BeTrue ();
+		}
 	}
 }
