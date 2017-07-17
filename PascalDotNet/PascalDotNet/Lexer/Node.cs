@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System;
 
 namespace PascalDotNet.Lexer
 {
@@ -20,6 +21,12 @@ namespace PascalDotNet.Lexer
 		{
 			_nodes = new List<Node>();
 			Name = name;
+		}
+
+		public Node Add(Node node)
+		{
+			_nodes.Add (node);
+			return new Node (name: Name, nodes: _nodes);
 		}
 	}
 }

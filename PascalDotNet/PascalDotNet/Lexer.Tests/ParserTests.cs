@@ -41,12 +41,32 @@ namespace PascalDotNet.Lexer.Tests
 			tokenizer.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken (programHeaderIdentificator))
-				.Returns (new SemiColonToken (";"));
+				.Returns (new SemiColonToken ());
 
 			var result = parser.Parse ();
 
-			result.Name.Should ().Be (Consts.PROGRAM_HEADING);
-			result.Nodes.First ().Name.Should ().Be (programHeaderIdentificator);
+			result.Nodes.First().Name.Should ().Be (Consts.PROGRAM_HEADING);
+			result.Nodes.First ().Nodes.First().Name.Should ().Be (programHeaderIdentificator);
+		}
+
+		[Test]
+		public void ParseConstDefinition()
+		{
+			tokenizer.SetupSequence (x => x.NextToken)
+				.Returns (new ProgramToken ())
+				.Returns (new IdentifierToken ("Test"))
+				.Returns (new SemiColonToken ())
+				.Returns(new KeyWordToken("CONST"))
+				.Returns(new IdentifierToken("PI"))
+				.Returns(new EqualToken())
+				.Returns(new DecimalToken("3.14"))
+				.Returns (new SemiColonToken ());
+
+			var result = parser.Parse ();
+
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONST_DECLARATION);
+			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("PI");
+			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("3.14");
 		}
 	}
 }

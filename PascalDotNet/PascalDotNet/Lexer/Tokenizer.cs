@@ -72,7 +72,7 @@ namespace PascalDotNet.Lexer
 				}
 				if('=' == character)
 				{
-					return new EqualToken (character.ToString ());
+					return new EqualToken ();
 				}
 				if('(' == character)
 				{

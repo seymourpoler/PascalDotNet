@@ -6,10 +6,11 @@
 		public bool IsAnOperator{get{return true;}}
 		public Operator Operator{get{return Operator.Equals;}}
 
-		public EqualToken (string value)
+		public EqualToken ()
 		{
-			Value = value;
+			Value = "=";
 		}
+
 
 		public bool Equals(IToken token)
 		{
