@@ -16,16 +16,20 @@ namespace PascalDotNet.Lexer.Tests
 		public void SetUp()
 		{
 			_tokenizer = new Mock<ITokenizer> ();
+			_tokenizer
+				.Setup (x => x.Tokens)
+				.Returns (new List<IToken>
+					{ 
+						new ProgramToken(),
+						new IdentifierToken("Test"),
+						new SemiColonToken()
+					}.AsReadOnly ());
+			_tokenParser = new TokensParser (_tokenizer.Object);
 		}
 
 		[Test]
 		public void ReturnsTheNextToken()
 		{
-			_tokenizer
-				.Setup (x => x.Tokens)
-				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
-			_tokenParser = new TokensParser (_tokenizer.Object);
-
 			var result = _tokenParser.NextToken;
 
 			result.Equals (new ProgramToken ()).Should ().BeTrue ();
@@ -35,10 +39,6 @@ namespace PascalDotNet.Lexer.Tests
 		public void ReturnsTheSecondNextToken()
 		{
 			IToken result;
-			_tokenizer
-				.Setup (x => x.Tokens)
-				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
-			_tokenParser = new TokensParser (_tokenizer.Object);
 			result = _tokenParser.NextToken;
 
 			result = _tokenParser.NextToken;
@@ -50,10 +50,6 @@ namespace PascalDotNet.Lexer.Tests
 		public void ReturnsEndOfFileTokenWhenThereIsNoMoreTokens()
 		{
 			IToken result;
-			_tokenizer
-				.Setup (x => x.Tokens)
-				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
-			_tokenParser = new TokensParser (_tokenizer.Object);
 			result = _tokenParser.NextToken;
 			result = _tokenParser.NextToken;
 			result = _tokenParser.NextToken;
@@ -67,10 +63,6 @@ namespace PascalDotNet.Lexer.Tests
 		[Test]
 		public void ReturnsTrueWhenWhereTheNextTokenIsRigth()
 		{
-			_tokenizer
-				.Setup (x => x.Tokens)
-				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
-			_tokenParser = new TokensParser (_tokenizer.Object);
 			var token = _tokenParser.NextToken;
 
 			var result = _tokenParser.WhereTheNextToken (x => x.GetType ().Name.Equals (new IdentifierToken ("Test").GetType ().Name));
@@ -82,10 +74,6 @@ namespace PascalDotNet.Lexer.Tests
 		public void ReturnsFalseWhenWhereTheNextTokenIsWrong()
 		{
 			IToken token;
-			_tokenizer
-				.Setup (x => x.Tokens)
-				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
-			_tokenParser = new TokensParser (_tokenizer.Object);
 			token = _tokenParser.NextToken;
 			token = _tokenParser.NextToken;
 
