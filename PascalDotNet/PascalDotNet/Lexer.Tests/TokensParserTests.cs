@@ -32,6 +32,21 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
+		public void ReturnsTheSecondNextToken()
+		{
+			IToken result;
+			_tokenizer
+				.Setup (x => x.Tokens)
+				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
+			_tokenParser = new TokensParser (_tokenizer.Object);
+			result = _tokenParser.NextToken;
+
+			result = _tokenParser.NextToken;
+
+			result.Equals (new IdentifierToken("Test")).Should ().BeTrue ();
+		}
+
+		[Test]
 		public void ReturnsEndOfFileTokenWhenThereIsNoMoreTokens()
 		{
 			IToken result;
