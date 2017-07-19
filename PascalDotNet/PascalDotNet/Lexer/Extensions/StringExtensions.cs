@@ -1,4 +1,4 @@
-﻿namespace PascalDotNet.Lexer
+﻿namespace PascalDotNet.Lexer.Extensions
 {
 	public static class StringExtensions
 	{

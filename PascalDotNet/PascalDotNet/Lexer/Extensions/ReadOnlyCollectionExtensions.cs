@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace PascalDotNet.Lexer
+namespace PascalDotNet.Lexer.Extensions
 {
 	public static class ReadOnlyCollectionExtensions
 	{

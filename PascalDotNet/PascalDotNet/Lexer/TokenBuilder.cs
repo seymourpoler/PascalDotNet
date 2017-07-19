@@ -1,5 +1,6 @@
 ﻿using System;
 using PascalDotNet.Lexer.Tokens;
+using PascalDotNet.Lexer.Extensions;
 
 namespace PascalDotNet.Lexer
 {
