@@ -4,8 +4,8 @@ namespace PascalDotNet.Lexer.Tokens
 {
 	public class EndOfFileToken : IToken
 	{
-		public string Value {get {throw new NotImplementedException ();	}}
-		public bool IsAnOperator{get{throw new NotImplementedException ();}}
+		public string Value {get { return String.Empty;}}
+		public bool IsAnOperator{get{return false;}}
 		public Operator Operator{get{throw new NotImplementedException ();}}
 
 		public bool Equals(IToken token)
