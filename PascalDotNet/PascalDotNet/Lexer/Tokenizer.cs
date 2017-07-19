@@ -1,12 +1,15 @@
 ﻿using System.Text;
 using System;
 using PascalDotNet.Lexer.Tokens;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace PascalDotNet.Lexer
 {
 	public interface ITokenizer
 	{
 		IToken NextToken{ get;}
+		ReadOnlyCollection<IToken> Tokens{ get;}
 	}
 
 	public class Tokenizer : ITokenizer
@@ -115,6 +118,27 @@ namespace PascalDotNet.Lexer
 					return new CommaToken (character.ToString ());
 				}
 				throw new UnExpectedTokenException();
+			}
+		}
+
+		public ReadOnlyCollection<IToken> Tokens
+		{
+			get
+			{
+				var tokens = new List<IToken> ();
+				var end = false;
+				IToken token;
+				//TODO: maybe do-while
+				while(!end)
+				{
+					token = NextToken;
+					tokens.Add (token);
+					if(token.Equals(new EndOfFileToken()))
+					{
+						end = true;
+					}
+				}
+				return tokens.AsReadOnly ();
 			}
 		}
 

@@ -4,27 +4,28 @@ using PascalDotNet.Lexer.Tokens;
 using FluentAssertions;
 using System.Linq;
 using System;
+using PascalDotNet.Lexer.Extensions;
 
 namespace PascalDotNet.Lexer.Tests
 {
 	[TestFixture]
 	public class ParserTests
 	{
-		private Mock<ITokenizer> tokenizer;
+		private Mock<ITokensParser> tokensParser;
 		private Parser parser;
 
 		[SetUp]
 		public void SetUp()
 		{
-			tokenizer = new Mock<ITokenizer> ();
+			tokensParser = new Mock<ITokensParser> ();
 			parser = new Parser (
-				tokenizer: tokenizer.Object);
+				tokensParser: tokensParser.Object);
 		}
 
 		[Test]
 		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissing()
 		{
-			tokenizer.SetupSequence (x => x.NextToken)
+			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken ("Test"))
 				.Returns (new SemiColonToken ("VAR"));
@@ -38,7 +39,7 @@ namespace PascalDotNet.Lexer.Tests
 		public void ParseHeadingProgramWithOnlyIdentificator()
 		{
 			const string programHeaderIdentificator = "Test";
-			tokenizer.SetupSequence (x => x.NextToken)
+			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken (programHeaderIdentificator))
 				.Returns (new SemiColonToken ());
@@ -52,7 +53,7 @@ namespace PascalDotNet.Lexer.Tests
 		[Test]
 		public void ParseConstDefinition()
 		{
-			tokenizer.SetupSequence (x => x.NextToken)
+			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken ("Test"))
 				.Returns (new SemiColonToken ())
@@ -67,6 +68,30 @@ namespace PascalDotNet.Lexer.Tests
 			result.Nodes.Second ().Name.Should ().Be (Consts.CONST_DECLARATION);
 			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("PI");
 			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("3.14");
+		}
+
+		[Test]
+		public void ParseTwoConstDefinitions()
+		{
+			tokensParser.SetupSequence (x => x.NextToken)
+				.Returns (new ProgramToken ())
+				.Returns (new IdentifierToken ("Test"))
+				.Returns (new SemiColonToken ())
+				.Returns(new KeyWordToken("CONST"))
+				.Returns(new IdentifierToken("PI"))
+				.Returns(new EqualToken())
+				.Returns(new DecimalToken("3.14"))
+				.Returns (new SemiColonToken ())
+				.Returns(new IdentifierToken("MESSAGE"))
+				.Returns(new EqualToken())
+				.Returns(new DecimalToken("'error in'"))
+				.Returns (new SemiColonToken ());
+
+			var result = parser.Parse ();
+
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONST_DECLARATION);
+			result.Nodes.Second ().Nodes.Second().Name.Should ().Be ("MESSAGE");
+			result.Nodes.Second ().Nodes.Second().Nodes.First().Name.Should ().Be ("'error in'");
 		}
 	}
 }
