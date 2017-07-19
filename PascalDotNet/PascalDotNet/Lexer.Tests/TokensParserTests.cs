@@ -63,5 +63,19 @@ namespace PascalDotNet.Lexer.Tests
 
 			result.Equals (new EndOfFileToken ()).Should ().BeTrue ();
 		}
+
+		[Test]
+		public void ReturnsTrueWhenWhereTheNextTokenIsRigth()
+		{
+			_tokenizer
+				.Setup (x => x.Tokens)
+				.Returns (new List<IToken>{ new ProgramToken(), new IdentifierToken("Test"), new SemiColonToken() }.AsReadOnly ());
+			_tokenParser = new TokensParser (_tokenizer.Object);
+			var token = _tokenParser.NextToken;
+
+			var result = _tokenParser.WhereTheNextToken (x => x.GetType ().Name.Equals (new IdentifierToken ("Test").GetType ().Name));
+
+			result.Should ().BeTrue ();
+		}
 	}
 }
