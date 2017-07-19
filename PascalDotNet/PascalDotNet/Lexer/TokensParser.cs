@@ -36,7 +36,8 @@ namespace PascalDotNet.Lexer
 
 		public bool WhereTheNextToken (Func<IToken, bool> predicate)
 		{
-			return predicate(_tokens[_position + 1]);
+			const int nexPosition = 1;
+			return predicate(_tokens[_position + nexPosition]);
 		}
 	}
 }
