@@ -51,6 +51,10 @@ namespace PascalDotNet.Lexer
 		private Node ParseConstantsDeclaration()
 		{
 			var result = new Node (Consts.CONST_DECLARATION);
+			if(!_tokensParser.WhereTheNextToken(x => x.Equals(new KeyWordToken("CONST"))))
+			{
+				return result;
+			}
 			IToken token;
 			token = _tokensParser.NextToken;
 			//TODO: ConstToken
@@ -59,9 +63,7 @@ namespace PascalDotNet.Lexer
 				throw new UnExpectedTokenException ();
 			}
 
-			var identifierTokenType = new IdentifierToken (String.Empty).GetType ();
-			var pp = _tokensParser.WhereTheNextToken (x => x.GetType ().Name.Equals(identifierTokenType.Name));
-			while(pp)
+			while(_tokensParser.WhereTheNextToken (x => x.GetType ().Name.Equals(new IdentifierToken (String.Empty).GetType ().Name)))
 			{
 				var identifierToken = _tokensParser.NextToken;
 				if(!identifierToken.Equals(new IdentifierToken(identifierToken.Value)))
@@ -86,6 +88,7 @@ namespace PascalDotNet.Lexer
 					nodes: new List<Node>{ new Node (valueToken.Value) }));
 			}
 			return result;
+
 			/*
 			var identifierToken = _tokenizer.NextToken;
 			if(!identifierToken.Equals(new IdentifierToken(identifierToken.Value)))

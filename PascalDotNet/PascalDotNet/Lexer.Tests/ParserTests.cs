@@ -1,10 +1,11 @@
-﻿using Moq;
-using NUnit.Framework;
-using PascalDotNet.Lexer.Tokens;
-using FluentAssertions;
+﻿using System;
 using System.Linq;
-using System;
+using FluentAssertions;
+using Moq;
+using NUnit.Framework;
 using PascalDotNet.Lexer.Extensions;
+using PascalDotNet.Lexer.Tokens;
+using PascalDotNet.Lexer.Tests;
 
 namespace PascalDotNet.Lexer.Tests
 {
@@ -42,7 +43,8 @@ namespace PascalDotNet.Lexer.Tests
 			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken (programHeaderIdentificator))
-				.Returns (new SemiColonToken ());
+				.Returns (new SemiColonToken ())
+				.Returns(new EndOfFileToken());
 
 			var result = parser.Parse ();
 
@@ -53,15 +55,22 @@ namespace PascalDotNet.Lexer.Tests
 		[Test]
 		public void ParseConstDefinition()
 		{
+			tokensParser
+				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+				.Returns (true)
+				.Returns (true)
+				.Returns (false);
+			
 			tokensParser.SetupSequence (x => x.NextToken)
-				.Returns (new ProgramToken ())
-				.Returns (new IdentifierToken ("Test"))
-				.Returns (new SemiColonToken ())
+				.Returns(new ProgramToken ())
+				.Returns(new IdentifierToken ("Test"))
+				.Returns(new SemiColonToken ())
 				.Returns(new KeyWordToken("CONST"))
 				.Returns(new IdentifierToken("PI"))
 				.Returns(new EqualToken())
 				.Returns(new DecimalToken("3.14"))
-				.Returns (new SemiColonToken ());
+				.Returns(new SemiColonToken ())
+				.Returns(new EndOfFileToken());
 
 			var result = parser.Parse ();
 
@@ -73,6 +82,13 @@ namespace PascalDotNet.Lexer.Tests
 		[Test]
 		public void ParseTwoConstDefinitions()
 		{
+			tokensParser
+				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+				.Returns (true)
+				.Returns (true)
+				.Returns (true)
+				.Returns(false);
+
 			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken ("Test"))
@@ -84,7 +100,7 @@ namespace PascalDotNet.Lexer.Tests
 				.Returns (new SemiColonToken ())
 				.Returns(new IdentifierToken("MESSAGE"))
 				.Returns(new EqualToken())
-				.Returns(new DecimalToken("'error in'"))
+				.Returns(new LiteralToken("'error in'"))
 				.Returns (new SemiColonToken ());
 
 			var result = parser.Parse ();

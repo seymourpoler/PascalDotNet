@@ -18,14 +18,27 @@ namespace PascalDotNet.Lexer
 		public TokensParser (ITokenizer tokenizer)
 		{
 			_tokens = tokenizer.Tokens;
-			_position = -1;
+			_position = 0;
 		}
 
 		public IToken NextToken
 		{
 			get 
 			{
+				if((_position)>= _tokens.Count)
+				{
+					return new EndOfFileToken ();
+				}
+				var tokenResult = _tokens [_position];
 				_position++;
+				return tokenResult;
+			}
+		}
+
+		private IToken FutureToken
+		{
+			get 
+			{
 				if(_position >= _tokens.Count)
 				{
 					return new EndOfFileToken ();
@@ -36,8 +49,7 @@ namespace PascalDotNet.Lexer
 
 		public bool WhereTheNextToken (Func<IToken, bool> predicate)
 		{
-			const int nexPosition = 1;
-			return predicate(_tokens[_position + nexPosition]);
+			return predicate(FutureToken);
 		}
 	}
 }
