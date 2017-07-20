@@ -88,34 +88,6 @@ namespace PascalDotNet.Lexer
 					nodes: new List<Node>{ new Node (valueToken.Value) }));
 			}
 			return result;
-
-			/*
-			var identifierToken = _tokenizer.NextToken;
-			if(!identifierToken.Equals(new IdentifierToken(identifierToken.Value)))
-			{
-				throw new UnExpectedTokenException ();
-			}
-
-			token = _tokenizer.NextToken;
-			if(!token.Equals(new EqualToken()))
-			{
-				throw new UnExpectedTokenException ();
-			}
-
-			var valueToken = _tokenizer.NextToken;
-			token = _tokenizer.NextToken;
-			if(!token.Equals(new SemiColonToken()))
-			{
-				throw new UnExpectedTokenException ();
-			}
-
-			return new Node (
-				name: Consts.CONST_DECLARATION,
-				nodes: new List<Node> {
-					new Node (name: identifierToken.Value,
-						nodes: new List<Node>{ new Node (valueToken.Value) }),
-				});
-			*/
 		}
 	}
 }
