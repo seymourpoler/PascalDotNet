@@ -32,7 +32,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokenizer.cs" />
-    <Compile Include="Token.cs" />
     <Compile Include="Text.cs" />
     <Compile Include="TokenBuilder.cs" />
     <Compile Include="Tokens\ConstToken.cs" />
