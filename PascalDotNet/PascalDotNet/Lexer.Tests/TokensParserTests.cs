@@ -32,7 +32,7 @@ namespace PascalDotNet.Lexer.Tests
 		{
 			var result = _tokenParser.NextToken;
 
-			result.Equals (new ProgramToken ()).Should ().BeTrue ();
+			result.IsEqualsTo (new ProgramToken ()).Should ().BeTrue ();
 		}
 
 		[Test]
@@ -43,7 +43,7 @@ namespace PascalDotNet.Lexer.Tests
 
 			result = _tokenParser.NextToken;
 
-			result.Equals (new IdentifierToken("Test")).Should ().BeTrue ();
+			result.IsEqualsTo (new IdentifierToken("Test")).Should ().BeTrue ();
 		}
 
 		[Test]
@@ -57,7 +57,7 @@ namespace PascalDotNet.Lexer.Tests
 
 			result = _tokenParser.NextToken;
 
-			result.Equals (new EndOfFileToken ()).Should ().BeTrue ();
+			result.IsEqualsTo (new EndOfFileToken ()).Should ().BeTrue ();
 		}
 
 		[Test]
@@ -77,7 +77,7 @@ namespace PascalDotNet.Lexer.Tests
 			token = _tokenParser.NextToken;
 			token = _tokenParser.NextToken;
 
-			var result = _tokenParser.WhereTheNextToken (x => x.Equals(new EndOfFileToken()));
+			var result = _tokenParser.WhereTheNextToken (x => x.IsEqualsTo(new EndOfFileToken()));
 
 			result.Should ().BeFalse ();
 		}

@@ -43,19 +43,19 @@ namespace PascalDotNet.Lexer
 
 		public static IToken Build(string value)
 		{
-			if(IsAKeyWord(value) && ("program".IsEqualTo(value)))
+			if(IsAKeyWord(value) && ("program".IsEqualsTo(value)))
 			{
 				return new ProgramToken ();
 			}
-			if(IsAKeyWord(value) && ("const".IsEqualTo(value)))
+			if(IsAKeyWord(value) && ("const".IsEqualsTo(value)))
 			{
 				return new ConstToken ();
 			}
-			if(IsAKeyWord(value) && ("or".IsEqualTo(value)))
+			if(IsAKeyWord(value) && ("or".IsEqualsTo(value)))
 			{
 				return new OrToken (value);
 			}
-			if(IsAKeyWord(value) && ("and".IsEqualTo(value)))
+			if(IsAKeyWord(value) && ("and".IsEqualsTo(value)))
 			{
 				return new AndToken (value);
 			}
@@ -79,7 +79,7 @@ namespace PascalDotNet.Lexer
 		{
 			for(int i = 0; i < keywords.Length; i++)
 			{
-				if(token.IsEqualTo(keywords[i]))
+				if(token.IsEqualsTo(keywords[i]))
 				{
 					return true;
 				}

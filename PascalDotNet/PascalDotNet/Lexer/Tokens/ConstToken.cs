@@ -11,7 +11,7 @@
             Value = "CONST";
         }
 
-        public bool Equals(IToken token)
+        public bool IsEqualsTo(IToken token)
         {
             return TokenComparator.Equals(this, token);
         }

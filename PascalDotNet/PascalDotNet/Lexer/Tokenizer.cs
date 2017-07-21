@@ -132,7 +132,7 @@ namespace PascalDotNet.Lexer
 				{
 					token = NextToken;
 					tokens.Add (token);
-					if(token.Equals(new EndOfFileToken()))
+					if(token.IsEqualsTo(new EndOfFileToken()))
 					{
 						end = true;
 					}

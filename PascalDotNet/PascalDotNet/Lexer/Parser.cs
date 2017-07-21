@@ -24,13 +24,13 @@ namespace PascalDotNet.Lexer
 		{
 			IToken token;
 			token = _tokensParser.NextToken;
-			if(!token.Equals(new ProgramToken()))
+			if(!token.IsEqualsTo(new ProgramToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
 
 			token = _tokensParser.NextToken;
-			if(!token.Equals(new IdentifierToken(token.Value)))
+			if(!token.IsEqualsTo(new IdentifierToken(token.Value)))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -40,7 +40,7 @@ namespace PascalDotNet.Lexer
 				nodes: new List<Node> {new Node(token.Value)});
 			
 			token = _tokensParser.NextToken;
-			if(!token.Equals(new SemiColonToken()))
+			if(!token.IsEqualsTo(new SemiColonToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -51,13 +51,13 @@ namespace PascalDotNet.Lexer
 		private Node ParseConstantsDeclaration()
 		{
 			var result = new Node (Consts.CONST_DECLARATION);
-			if(!_tokensParser.WhereTheNextToken(x => x.Equals(new ConstToken())))
+			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new ConstToken())))
 			{
 				return result;
 			}
 			IToken token;
 			token = _tokensParser.NextToken;
-			if(!token.Equals(new ConstToken()))
+			if(!token.IsEqualsTo(new ConstToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -65,20 +65,20 @@ namespace PascalDotNet.Lexer
 			while(_tokensParser.WhereTheNextToken (x => x.GetType ().Name.Equals(new IdentifierToken (String.Empty).GetType ().Name)))
 			{
 				var identifierToken = _tokensParser.NextToken;
-				if(!identifierToken.Equals(new IdentifierToken(identifierToken.Value)))
+				if(!identifierToken.IsEqualsTo(new IdentifierToken(identifierToken.Value)))
 				{
 					throw new UnExpectedTokenException ();
 				}
 
 				token = _tokensParser.NextToken;
-				if(!token.Equals(new EqualToken()))
+				if(!token.IsEqualsTo(new EqualToken()))
 				{
 					throw new UnExpectedTokenException ();
 				}
 
 				var valueToken = _tokensParser.NextToken;
 				token = _tokensParser.NextToken;
-				if(!token.Equals(new SemiColonToken()))
+				if(!token.IsEqualsTo(new SemiColonToken()))
 				{
 					throw new UnExpectedTokenException ();
 				}
