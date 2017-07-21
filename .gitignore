@@ -155,6 +155,7 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
+PascalDotNet\PascalDotNet\.idea
 PascalDotNet\PascalDotNet\packages
 PascalDotNet\PascalDotNet\Lexer\bin
 PascalDotNet\PascalDotNet\Lexer\obj
