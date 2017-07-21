@@ -67,10 +67,8 @@
     <Compile Include="Tokens\CommaToken.cs" />
     <Compile Include="Tokens\OrToken.cs" />
     <Compile Include="Tokens\AndToken.cs" />
-    <Compile Include="UnExpectedTokenException.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Operator.cs" />
-    <Compile Include="NotAnOperatorException.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Tokens\TokenComparator.cs" />
@@ -78,10 +76,13 @@
     <Compile Include="TokensParser.cs" />
     <Compile Include="Extensions\ReadOnlyCollectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Exceptions\NotAnOperatorException.cs" />
+    <Compile Include="Exceptions\UnExpectedTokenException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Tokens\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

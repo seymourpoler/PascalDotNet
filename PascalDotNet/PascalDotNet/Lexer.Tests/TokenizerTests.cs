@@ -2,6 +2,7 @@
 using FluentAssertions;
 using PascalDotNet.Lexer.Tokens;
 using System;
+using PascalDotNet.Lexer.Exceptions;
 
 namespace PascalDotNet.Lexer.Tests
 {

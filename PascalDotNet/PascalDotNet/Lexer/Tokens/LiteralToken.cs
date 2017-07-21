@@ -1,4 +1,5 @@
-﻿
+﻿using PascalDotNet.Lexer.Exceptions;
+
 namespace PascalDotNet.Lexer.Tokens
 {
 	public class LiteralToken : IToken

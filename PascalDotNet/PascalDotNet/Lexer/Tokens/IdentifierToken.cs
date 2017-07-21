@@ -1,4 +1,6 @@
-﻿namespace PascalDotNet.Lexer.Tokens
+﻿using PascalDotNet.Lexer.Exceptions;
+
+namespace PascalDotNet.Lexer.Tokens
 {
 	public class IdentifierToken : IToken
 	{

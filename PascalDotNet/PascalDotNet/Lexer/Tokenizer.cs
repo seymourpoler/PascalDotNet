@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System;
+using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
