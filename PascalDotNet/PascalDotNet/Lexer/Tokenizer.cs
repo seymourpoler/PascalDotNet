@@ -34,7 +34,6 @@ namespace PascalDotNet.Lexer
 					}
 					character = _text.NextCharacter;
 				}
-
 				if(char.IsLetter(character))
 				{
 					return BuildKeywordOrIdentifierToken (character);

@@ -51,14 +51,13 @@ namespace PascalDotNet.Lexer
 		private Node ParseConstantsDeclaration()
 		{
 			var result = new Node (Consts.CONST_DECLARATION);
-			if(!_tokensParser.WhereTheNextToken(x => x.Equals(new KeyWordToken("CONST"))))
+			if(!_tokensParser.WhereTheNextToken(x => x.Equals(new ConstToken())))
 			{
 				return result;
 			}
 			IToken token;
 			token = _tokensParser.NextToken;
-			//TODO: ConstToken
-			if(!token.Equals(new KeyWordToken("CONST")))
+			if(!token.Equals(new ConstToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}

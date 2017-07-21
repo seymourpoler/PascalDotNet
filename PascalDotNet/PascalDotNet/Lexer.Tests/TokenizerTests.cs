@@ -62,12 +62,12 @@ namespace PascalDotNet.Lexer.Tests
 		[Test]
 		public void ReturnsConstTokenFromKeyWord()
 		{
-			var word = "Const PI = 3.14;";
+			var word = "CONST PI = 3.14;";
 			var tokenizer = new Tokenizer (word);
 
 			var token = tokenizer.NextToken;
 
-			token.Value.Should ().Be (word);
+			token.Value.Should ().Be ("CONST");
 			token.Should ().BeOfType<ConstToken> ();
 		}
 
