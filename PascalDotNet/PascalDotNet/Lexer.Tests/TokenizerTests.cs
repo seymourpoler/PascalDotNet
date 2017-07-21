@@ -58,6 +58,18 @@ namespace PascalDotNet.Lexer.Tests
 			token.Value.Should ().Be (word);
 			token.Should ().BeOfType<ProgramToken> ();
 		}
+		
+		[Test]
+		public void ReturnsConstTokenFromKeyWord()
+		{
+			var word = "Const PI = 3.14;";
+			var tokenizer = new Tokenizer (word);
+
+			var token = tokenizer.NextToken;
+
+			token.Value.Should ().Be (word);
+			token.Should ().BeOfType<ConstToken> ();
+		}
 
 		[Test]
 		public void ReturnsIdentifierTokenFromIdentifier()
@@ -73,7 +85,6 @@ namespace PascalDotNet.Lexer.Tests
 			result.Value.Should ().Be (name);
 			result.Should ().BeOfType<IdentifierToken> ();
 		}
-
 		[Test]
 		public void ReturnsIntegerTokenWhenIsInteger()
 		{
