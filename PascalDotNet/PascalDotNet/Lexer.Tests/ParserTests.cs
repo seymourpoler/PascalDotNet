@@ -53,6 +53,30 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
+		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInConstDeclaration()
+		{
+			tokensParser
+				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+				.Returns (true)
+				.Returns (true)
+				.Returns (false);
+
+			tokensParser.SetupSequence (x => x.NextToken)
+				.Returns(new ProgramToken ())
+				.Returns(new IdentifierToken ("Test"))
+				.Returns(new SemiColonToken ())
+				.Returns(new ConstToken())
+				.Returns(new IdentifierToken("PI"))
+				.Returns(new EqualToken())
+				.Returns(new SemiColonToken ())
+				.Returns(new EndOfFileToken());
+
+			Action action = () => parser.Parse ();
+
+			action.ShouldThrow<UnExpectedTokenException> ();
+		}
+
+		[Test]
 		public void ParseConstDefinition()
 		{
 			tokensParser

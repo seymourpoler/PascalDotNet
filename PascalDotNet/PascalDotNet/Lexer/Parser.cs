@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using PascalDotNet.Lexer.Tokens;
 using System;
+using PascalDotNet.Lexer.Exceptions;
 
 namespace PascalDotNet.Lexer
 {
@@ -18,8 +19,10 @@ namespace PascalDotNet.Lexer
 			return new Node ("Pascal")
 				.Add (ParseHeading ())
 				.Add (ParseConstantsDeclaration ());
+				//.Add (ParseVariablesDeclaration ());
 		}
 
+		//TODO: extract class
 		private Node ParseHeading()
 		{
 			IToken token;
@@ -87,6 +90,11 @@ namespace PascalDotNet.Lexer
 					nodes: new List<Node>{ new Node (valueToken.Value) }));
 			}
 			return result;
+		}
+
+		private Node ParseVariablesDeclaration()
+		{
+			throw new NotImplementedException ();
 		}
 	}
 }
