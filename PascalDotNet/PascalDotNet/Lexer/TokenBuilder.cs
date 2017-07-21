@@ -8,6 +8,7 @@ namespace PascalDotNet.Lexer
 	{
 		static string[] keywords = new [] { 
 			"program",
+			"const",
 			"user",
 			"type",
 			"var",
