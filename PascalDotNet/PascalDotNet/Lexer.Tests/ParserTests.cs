@@ -98,7 +98,7 @@ namespace PascalDotNet.Lexer.Tests
 
 			var result = parser.Parse ();
 
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONST_DECLARATION);
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANT_DECLARATION);
 			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("PI");
 			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("3.14");
 		}
@@ -129,9 +129,57 @@ namespace PascalDotNet.Lexer.Tests
 
 			var result = parser.Parse ();
 
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONST_DECLARATION);
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANT_DECLARATION);
 			result.Nodes.Second ().Nodes.Second().Name.Should ().Be ("MESSAGE");
 			result.Nodes.Second ().Nodes.Second().Nodes.First().Name.Should ().Be ("'error in'");
+		}
+
+		[Test]
+		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInVariablesDeclaration()
+		{
+			tokensParser
+				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+				.Returns (true)
+				.Returns (true)
+				.Returns (false);
+
+			tokensParser.SetupSequence (x => x.NextToken)
+				.Returns (new ProgramToken ())
+				.Returns (new IdentifierToken ("Test"))
+				.Returns (new SemiColonToken ())
+				.Returns (new KeyWordToken ("VAR"))
+				.Returns (new IdentifierToken ("position"))
+				.Returns (new KeyWordToken (":"));
+
+			Action action = () => parser.Parse ();
+
+			action.ShouldThrow<UnExpectedTokenException> ();
+		}
+
+		[Test]
+		public void ParseVariablesDeclaration()
+		{
+			tokensParser
+				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+				.Returns (true)
+				.Returns (true)
+				.Returns (false);
+
+			tokensParser.SetupSequence (x => x.NextToken)
+				.Returns(new ProgramToken ())
+				.Returns(new IdentifierToken ("Test"))
+				.Returns(new SemiColonToken ())
+				.Returns(new KeyWordToken("VAR"))
+				.Returns(new IdentifierToken("position"))
+				.Returns(new KeyWordToken(":"))
+				.Returns(new KeyWordToken("INTEGER"))
+				.Returns(new EndOfFileToken());
+
+			var result = parser.Parse ();
+
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANT_DECLARATION);
+			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("position");
+			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("INTEGER");
 		}
 	}
 }

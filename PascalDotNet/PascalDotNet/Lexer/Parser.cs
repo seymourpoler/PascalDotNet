@@ -53,7 +53,7 @@ namespace PascalDotNet.Lexer
 
 		private Node ParseConstantsDeclaration()
 		{
-			var result = new Node (Consts.CONST_DECLARATION);
+			var result = new Node (Consts.CONSTANT_DECLARATION);
 			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new ConstToken())))
 			{
 				return result;
