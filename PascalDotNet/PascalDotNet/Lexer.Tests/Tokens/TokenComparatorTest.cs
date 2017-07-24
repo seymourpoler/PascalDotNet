@@ -26,7 +26,7 @@ namespace PascalDotNet.Lexer.Tests.Tokens
 		[Test]
 		public void ReturnsFalseWhenHasDifferentTypes()
 		{
-			var result = TokenComparator.Equals (new KeyWordToken("Key"), new SemiColonToken("Word"));
+			var result = TokenComparator.Equals (new KeyWordToken("Key"), new SemiColonToken());
 
 			result.Should ().BeFalse ();
 		}
@@ -42,7 +42,7 @@ namespace PascalDotNet.Lexer.Tests.Tokens
 		[Test]
 		public void ReturnsTrueWhenBothHasNullValues()
 		{
-			var result = TokenComparator.Equals (new SemiColonToken(null), new SemiColonToken(null));
+			var result = TokenComparator.Equals (new IdentifierToken(null), new IdentifierToken(null));
 
 			result.Should ().BeTrue ();
 		}
@@ -51,7 +51,7 @@ namespace PascalDotNet.Lexer.Tests.Tokens
 		[Test]
 		public void ReturnsTrueAreEquals()
 		{
-			var result = TokenComparator.Equals (new SemiColonToken(";"), new SemiColonToken(";"));
+			var result = TokenComparator.Equals (new IdentifierToken("position"), new IdentifierToken("position"));
 
 			result.Should ().BeTrue ();
 		}

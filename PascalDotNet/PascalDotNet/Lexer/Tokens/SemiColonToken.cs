@@ -8,11 +8,6 @@ namespace PascalDotNet.Lexer.Tokens
 		public bool IsAnOperator{get{return false;}}
 		public Operator Operator{get{throw new NotAnOperatorException ();}}
 
-		public SemiColonToken (string value)
-		{
-			Value = value;
-		}
-
 		public SemiColonToken ()
 		{
 			Value = ";";

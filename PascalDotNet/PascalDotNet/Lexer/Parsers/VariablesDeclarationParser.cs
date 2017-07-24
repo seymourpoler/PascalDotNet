@@ -38,7 +38,7 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				token = _tokensParser.NextToken;
-				if(!token.IsEqualsTo(new KeyWordToken(":")))
+				if(!token.IsEqualsTo(new ColonToken()))
 				{
 					throw new UnExpectedTokenException ();
 				}

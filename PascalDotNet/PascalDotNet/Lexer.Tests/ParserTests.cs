@@ -29,7 +29,7 @@ namespace PascalDotNet.Lexer.Tests
 			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken ("Test"))
-				.Returns (new SemiColonToken ("VAR"));
+				.Returns (new EndOfFileToken ());
 
 			Action action = () => parser.Parse ();
 
@@ -149,7 +149,7 @@ namespace PascalDotNet.Lexer.Tests
 				.Returns (new SemiColonToken ())
 				.Returns (new KeyWordToken ("VAR"))
 				.Returns (new IdentifierToken ("position"))
-				.Returns (new KeyWordToken (":"));
+				.Returns (new ColonToken ());
 
 			Action action = () => parser.Parse ();
 
@@ -171,7 +171,7 @@ namespace PascalDotNet.Lexer.Tests
 				.Returns(new SemiColonToken ())
 				.Returns(new KeyWordToken("VAR"))
 				.Returns(new IdentifierToken("position"))
-				.Returns(new KeyWordToken(":"))
+				.Returns(new ColonToken())
 				.Returns(new KeyWordToken("INTEGER"))
 				.Returns(new SemiColonToken ())
 				.Returns(new EndOfFileToken());

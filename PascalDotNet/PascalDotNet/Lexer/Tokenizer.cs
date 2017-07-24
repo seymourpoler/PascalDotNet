@@ -107,7 +107,7 @@ namespace PascalDotNet.Lexer
 				}
 				if(';' == character)
 				{
-					return new SemiColonToken (character.ToString ());
+					return new SemiColonToken ();
 				}
 				if('.' == character)
 				{
@@ -274,7 +274,7 @@ namespace PascalDotNet.Lexer
 			{
 				return new AssignmentToken (tokenValue.Append (_text.NextCharacter).ToString ());
 			}
-			return new ColonToken (character.ToString ());
+			return new ColonToken ();
 		}
 	}
 }

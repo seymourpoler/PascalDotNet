@@ -8,9 +8,9 @@ namespace PascalDotNet.Lexer.Tokens
 		public bool IsAnOperator{get{return false;}}
 		public Operator Operator{get{throw new NotAnOperatorException ();}}
 
-		public ColonToken (string value)
+		public ColonToken ()
 		{
-			Value = value;
+			Value = ":";
 		}
 
 		public bool IsEqualsTo(IToken token)
