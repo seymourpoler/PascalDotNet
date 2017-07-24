@@ -1,9 +1,9 @@
-﻿using System.Text;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
 using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
 
 namespace PascalDotNet.Lexer
 {
