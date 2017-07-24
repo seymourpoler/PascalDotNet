@@ -2,7 +2,7 @@
 using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
 
-namespace PascalDotNet.Lexer
+namespace PascalDotNet.Lexer.Parsers
 {
 	public class HeadingParser
 	{

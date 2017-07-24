@@ -1,23 +1,26 @@
-﻿using System.Collections.Generic;
-using PascalDotNet.Lexer.Tokens;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using PascalDotNet.Lexer.Exceptions;
+using PascalDotNet.Lexer.Parsers;
+using PascalDotNet.Lexer.Tokens;
 
 namespace PascalDotNet.Lexer
 {
 	public class Parser
 	{
 		private readonly ITokensParser _tokensParser;
+		private readonly HeadingParser _headingParser;
 
 		public Parser(ITokensParser tokensParser)
 		{
 			_tokensParser = tokensParser;
+			_headingParser = new HeadingParser (tokensParser);
 		}
 
 		public Node Parse()
 		{
 			return new Node ("Pascal")
-				.Add (ParseHeading ())
+				.Add (_headingParser.Parse ())
 				.Add (ParseConstantsDeclaration ())
 				.Add (ParseVariablesDeclaration ());
 		}
