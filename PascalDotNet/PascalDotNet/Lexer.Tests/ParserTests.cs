@@ -24,7 +24,7 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
-		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissing()
+		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInProgramDeclaration()
 		{
 			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns (new ProgramToken ())
