@@ -79,6 +79,7 @@
     <Compile Include="Exceptions\NotAnOperatorException.cs" />
     <Compile Include="Exceptions\UnExpectedTokenException.cs" />
     <Compile Include="Parsers\HeadingParser.cs" />
+    <Compile Include="Parsers\ConstantsDeclarationParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
