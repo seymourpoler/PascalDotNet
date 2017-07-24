@@ -11,12 +11,14 @@ namespace PascalDotNet.Lexer
 		private readonly ITokensParser _tokensParser;
 		private readonly HeadingParser _headingParser;
 		private readonly ConstantsDeclarationParser _constantsDeclarationParser;
+		private readonly VariablesDeclarationParser _variablesDeclarationParser;
 
 		public Parser(ITokensParser tokensParser)
 		{
 			_tokensParser = tokensParser;
 			_headingParser = new HeadingParser (tokensParser);
 			_constantsDeclarationParser = new ConstantsDeclarationParser (tokensParser);
+			_variablesDeclarationParser = new VariablesDeclarationParser (tokensParser);
 		}
 
 		public Node Parse()
@@ -24,7 +26,7 @@ namespace PascalDotNet.Lexer
 			return new Node ("Pascal")
 				.Add (_headingParser.Parse ())
 				.Add (_constantsDeclarationParser.Parse ())
-				.Add (ParseVariablesDeclaration ());
+				.Add (_variablesDeclarationParser.Parse ());
 		}
 
 		//TODO: extract class

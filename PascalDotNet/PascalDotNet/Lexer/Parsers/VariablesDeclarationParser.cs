@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
 
-namespace PascalDotNet.Lexer
+namespace PascalDotNet.Lexer.Parsers
 {
 	public class VariablesDeclarationParser
 	{
@@ -14,7 +14,7 @@ namespace PascalDotNet.Lexer
 			_tokensParser = tokensParser;
 		}
 
-		private Node Parse()
+		public Node Parse()
 		{
 			var result = new Node (Consts.VARIABLES_DECLARATION);
 			//TODO: extract class VarToken
