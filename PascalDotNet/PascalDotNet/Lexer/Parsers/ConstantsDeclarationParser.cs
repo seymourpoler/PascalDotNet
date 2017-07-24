@@ -14,7 +14,7 @@ namespace PascalDotNet.Lexer
 			_tokensParser = tokensParser;
 		}
 
-		private Node Parse()
+		public Node Parse()
 		{
 			var result = new Node (Consts.CONSTANTS_DECLARATION);
 			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new ConstToken())))

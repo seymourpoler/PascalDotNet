@@ -10,18 +10,20 @@ namespace PascalDotNet.Lexer
 	{
 		private readonly ITokensParser _tokensParser;
 		private readonly HeadingParser _headingParser;
+		private readonly ConstantsDeclarationParser _constantsDeclarationParser;
 
 		public Parser(ITokensParser tokensParser)
 		{
 			_tokensParser = tokensParser;
 			_headingParser = new HeadingParser (tokensParser);
+			_constantsDeclarationParser = new ConstantsDeclarationParser (tokensParser);
 		}
 
 		public Node Parse()
 		{
 			return new Node ("Pascal")
 				.Add (_headingParser.Parse ())
-				.Add (ParseConstantsDeclaration ())
+				.Add (_constantsDeclarationParser.Parse ())
 				.Add (ParseVariablesDeclaration ());
 		}
 
