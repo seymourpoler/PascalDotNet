@@ -17,14 +17,13 @@ namespace PascalDotNet.Lexer.Parsers
 		public Node Parse()
 		{
 			var result = new Node (Consts.VARIABLES_DECLARATION);
-			//TODO: extract class VarToken
-			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new KeyWordToken("VAR"))))
+			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new VarToken())))
 			{
 				return result;
 			}
 			IToken token;
 			token = _tokensParser.NextToken;
-			if(!token.IsEqualsTo(new KeyWordToken("VAR")))
+			if(!token.IsEqualsTo(new VarToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}

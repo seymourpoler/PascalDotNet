@@ -51,6 +51,10 @@ namespace PascalDotNet.Lexer
 			{
 				return new ConstToken ();
 			}
+			if(IsAKeyWord(value) && ("var".IsEqualsTo(value)))
+			{
+				return new VarToken ();
+			}
 			if(IsAKeyWord(value) && ("or".IsEqualsTo(value)))
 			{
 				return new OrToken (value);

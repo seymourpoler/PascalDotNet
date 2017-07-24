@@ -73,6 +73,18 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
+		public void ReturnsVarTokenFromKeyWord()
+		{
+			var word = "VAR position : INTEGER;";
+			var tokenizer = new Tokenizer (word);
+
+			var token = tokenizer.NextToken;
+
+			token.Value.Should ().Be ("VAR");
+			token.Should ().BeOfType<VarToken> ();
+		}
+
+		[Test]
 		public void ReturnsIdentifierTokenFromIdentifier()
 		{
 			var name = "TOM";

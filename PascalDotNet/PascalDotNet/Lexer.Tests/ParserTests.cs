@@ -147,7 +147,7 @@ namespace PascalDotNet.Lexer.Tests
 				.Returns (new ProgramToken ())
 				.Returns (new IdentifierToken ("Test"))
 				.Returns (new SemiColonToken ())
-				.Returns (new KeyWordToken ("VAR"))
+				.Returns (new VarToken ())
 				.Returns (new IdentifierToken ("position"))
 				.Returns (new ColonToken ());
 
@@ -169,7 +169,7 @@ namespace PascalDotNet.Lexer.Tests
 				.Returns(new ProgramToken ())
 				.Returns(new IdentifierToken ("Test"))
 				.Returns(new SemiColonToken ())
-				.Returns(new KeyWordToken("VAR"))
+				.Returns(new VarToken())
 				.Returns(new IdentifierToken("position"))
 				.Returns(new ColonToken())
 				.Returns(new KeyWordToken("INTEGER"))
