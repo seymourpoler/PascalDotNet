@@ -3,7 +3,7 @@ using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
 using System;
 
-namespace PascalDotNet.Lexer
+namespace PascalDotNet.Lexer.Parsers
 {
 	public class ConstantsDeclarationParser
 	{
