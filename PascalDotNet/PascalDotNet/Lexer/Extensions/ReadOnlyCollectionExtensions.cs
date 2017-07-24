@@ -13,6 +13,15 @@ namespace PascalDotNet.Lexer.Extensions
 			}
 			return collection [1];
 		}
+
+		public static T Third<T>(this ReadOnlyCollection<T> collection) where T : class
+		{
+			if(collection.Count < 3)
+			{
+				throw new ArgumentOutOfRangeException ();
+			}
+			return collection [2];
+		}
 	}
 }
 

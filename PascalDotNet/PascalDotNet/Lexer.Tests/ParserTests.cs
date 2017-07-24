@@ -98,7 +98,7 @@ namespace PascalDotNet.Lexer.Tests
 
 			var result = parser.Parse ();
 
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANT_DECLARATION);
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANTS_DECLARATION);
 			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("PI");
 			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("3.14");
 		}
@@ -129,7 +129,7 @@ namespace PascalDotNet.Lexer.Tests
 
 			var result = parser.Parse ();
 
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANT_DECLARATION);
+			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANTS_DECLARATION);
 			result.Nodes.Second ().Nodes.Second().Name.Should ().Be ("MESSAGE");
 			result.Nodes.Second ().Nodes.Second().Nodes.First().Name.Should ().Be ("'error in'");
 		}
@@ -161,9 +161,9 @@ namespace PascalDotNet.Lexer.Tests
 		{
 			tokensParser
 				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+				.Returns (false)
 				.Returns (true)
-				.Returns (true)
-				.Returns (false);
+				.Returns (true);
 
 			tokensParser.SetupSequence (x => x.NextToken)
 				.Returns(new ProgramToken ())
@@ -173,13 +173,14 @@ namespace PascalDotNet.Lexer.Tests
 				.Returns(new IdentifierToken("position"))
 				.Returns(new KeyWordToken(":"))
 				.Returns(new KeyWordToken("INTEGER"))
+				.Returns(new SemiColonToken ())
 				.Returns(new EndOfFileToken());
 
 			var result = parser.Parse ();
 
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANT_DECLARATION);
-			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("position");
-			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("INTEGER");
+			result.Nodes.Third ().Name.Should ().Be (Consts.VARIABLES_DECLARATION);
+			result.Nodes.Third ().Nodes.First().Name.Should ().Be ("position");
+			result.Nodes.Third ().Nodes.First().Nodes.First().Name.Should ().Be ("INTEGER");
 		}
 	}
 }

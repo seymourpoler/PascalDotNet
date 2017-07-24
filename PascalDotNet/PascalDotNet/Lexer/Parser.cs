@@ -18,8 +18,8 @@ namespace PascalDotNet.Lexer
 		{
 			return new Node ("Pascal")
 				.Add (ParseHeading ())
-				.Add (ParseConstantsDeclaration ());
-				//.Add (ParseVariablesDeclaration ());
+				.Add (ParseConstantsDeclaration ())
+				.Add (ParseVariablesDeclaration ());
 		}
 
 		//TODO: extract class
@@ -53,7 +53,7 @@ namespace PascalDotNet.Lexer
 
 		private Node ParseConstantsDeclaration()
 		{
-			var result = new Node (Consts.CONSTANT_DECLARATION);
+			var result = new Node (Consts.CONSTANTS_DECLARATION);
 			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new ConstToken())))
 			{
 				return result;
@@ -94,7 +94,44 @@ namespace PascalDotNet.Lexer
 
 		private Node ParseVariablesDeclaration()
 		{
-			throw new NotImplementedException ();
+			var result = new Node (Consts.VARIABLES_DECLARATION);
+			//TODO: extract class VarToken
+			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new KeyWordToken("VAR"))))
+			{
+				return result;
+			}
+			IToken token;
+			token = _tokensParser.NextToken;
+			if(!token.IsEqualsTo(new KeyWordToken("VAR")))
+			{
+				throw new UnExpectedTokenException ();
+			}
+
+			while(_tokensParser.WhereTheNextToken (x => x.GetType ().Name.Equals(new IdentifierToken (String.Empty).GetType ().Name)))
+			{
+				var identifierToken = _tokensParser.NextToken;
+				if(!identifierToken.IsEqualsTo(new IdentifierToken(identifierToken.Value)))
+				{
+					throw new UnExpectedTokenException ();
+				}
+
+				token = _tokensParser.NextToken;
+				if(!token.IsEqualsTo(new KeyWordToken(":")))
+				{
+					throw new UnExpectedTokenException ();
+				}
+
+				var variableTypeToken = _tokensParser.NextToken;
+				token = _tokensParser.NextToken;
+				if(!token.IsEqualsTo(new SemiColonToken()))
+				{
+					throw new UnExpectedTokenException ();
+				}
+				result.Add (new Node (
+					name: identifierToken.Value,
+					nodes: new List<Node>{ new Node (variableTypeToken.Value) }));
+			}
+			return result;
 		}
 	}
 }
