@@ -3,9 +3,9 @@ using System.Linq;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
+using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Extensions;
 using PascalDotNet.Lexer.Tokens;
-using PascalDotNet.Lexer.Exceptions;
 
 namespace PascalDotNet.Lexer.Tests
 {
