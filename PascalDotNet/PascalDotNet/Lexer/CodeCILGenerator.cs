@@ -22,7 +22,7 @@ namespace PascalDotNet.Lexer
 			assemblyBuilder.SetEntryPoint (BuildMainMethod(), PEFileKinds.ConsoleApplication);
 		}
 
-		public void Generate()
+		public void Generate(Node syntaxTree)
 		{
 			throw new NotImplementedException ();
 			assemblyBuilder.Save ("OutPut.exe"/*TODO: change*/);
