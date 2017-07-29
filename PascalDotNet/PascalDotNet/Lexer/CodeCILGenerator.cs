@@ -25,16 +25,19 @@ namespace PascalDotNet.Lexer
 		public void Generate()
 		{
 			throw new NotImplementedException ();
+			assemblyBuilder.Save ("OutPut.exe"/*TODO: change*/);
 		}
 
 		private MethodBuilder BuildMainMethod()
 		{
-			var type = moduleBuilder.DefineType("Application",
-				TypeAttributes.Public|TypeAttributes.Class);
-			return type.DefineMethod("Main",
-				MethodAttributes.Public|
-				MethodAttributes.Static,
-				typeof(int), new Type[] { typeof(string[]) });
+			var type = moduleBuilder.DefineType(
+				name: "Application",
+				attr: TypeAttributes.Public|TypeAttributes.Class);
+			return type.DefineMethod (
+				name: "Main",
+				attributes: MethodAttributes.Public | MethodAttributes.Static,
+				returnType: typeof(int), 
+				parameterTypes: new Type[] { typeof(string[]) });
 		}
 	}
 }
