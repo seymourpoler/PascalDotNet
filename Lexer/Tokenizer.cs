@@ -26,7 +26,7 @@ namespace PascalDotNet.Lexer
 					return new EndOfFileToken();
 				}
 
-				char character = _text.NextCharacter;
+				var character = _text.NextCharacter;
 				while(character == ' ' || character == '\r' || character == '\t' || character == '\n')
 				{
 					if(!_text.HasMoreCharacters)
