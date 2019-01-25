@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5978f8c8-7da8-4ded-8994-00ca19ea4156" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeadingParser.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HeadingParser.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="210">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding>
                 <marker date="1548454543081" expanded="true" signature="6:103" ph="..." />
                 <marker date="1548454543081" expanded="true" signature="141:909" ph="{...}" />
@@ -53,6 +53,28 @@
                 <marker date="1548454543081" expanded="true" signature="428:481" ph="{...}" />
                 <marker date="1548454543081" expanded="true" signature="577:630" ph="{...}" />
                 <marker date="1548454543081" expanded="true" signature="828:881" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VariablesDeclarationParser.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <marker date="1548454599931" expanded="false" signature="6:117" ph="..." />
+                <marker date="1548454599931" expanded="true" signature="155:1491" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="198:1489" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="315:356" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="379:1486" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="515:544" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="625:678" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="805:1464" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="941:997" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="1079:1135" ph="{...}" />
+                <marker date="1548454599931" expanded="true" signature="1274:1330" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -193,16 +215,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Lexer/Node.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Operator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Parser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Consts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Text.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokensParser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer/Extensions/ReadOnlyCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer/Extensions/StringExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokenBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/Extensions/ReadOnlyCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/Extensions/StringExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -215,6 +238,7 @@
         <option value="$PROJECT_DIR$/Lexer/Tokenizer.cs" />
         <option value="$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" />
         <option value="$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" />
+        <option value="$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs" />
       </list>
     </option>
   </component>
@@ -308,12 +332,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548342745885</updated>
       <workItem from="1548342748286" duration="447000" />
-      <workItem from="1548452866172" duration="1677000" />
+      <workItem from="1548452866172" duration="1738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2124000" />
+    <option name="totallyTimeSpent" value="2185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,8 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="210">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
           <folding>
             <marker date="1548454543081" expanded="true" signature="6:103" ph="..." />
             <marker date="1548454543081" expanded="true" signature="141:909" ph="{...}" />
@@ -673,6 +697,26 @@
             <marker date="1548454543081" expanded="true" signature="428:481" ph="{...}" />
             <marker date="1548454543081" expanded="true" signature="577:630" ph="{...}" />
             <marker date="1548454543081" expanded="true" signature="828:881" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <marker date="1548454599931" expanded="false" signature="6:117" ph="..." />
+            <marker date="1548454599931" expanded="true" signature="155:1491" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="198:1489" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="315:356" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="379:1486" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="515:544" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="625:678" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="805:1464" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="941:997" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="1079:1135" ph="{...}" />
+            <marker date="1548454599931" expanded="true" signature="1274:1330" ph="{...}" />
           </folding>
         </state>
       </provider>
