@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PascalDotNet.Lexer
+﻿namespace PascalDotNet.Lexer
 {
 	public enum Operator
 	{
