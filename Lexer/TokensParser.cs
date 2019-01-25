@@ -1,6 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using PascalDotNet.Lexer.Tokens;
+﻿using PascalDotNet.Lexer.Tokens;
 using System;
+using System.Collections.ObjectModel;
 
 namespace PascalDotNet.Lexer
 {

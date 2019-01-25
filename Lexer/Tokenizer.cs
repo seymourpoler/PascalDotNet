@@ -151,7 +151,7 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			bool exit = false;
+			var exit = false;
 
 			while(!exit)
 			{
@@ -172,7 +172,7 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			bool exit = false;
+			var exit = false;
 
 			while(!exit)
 			{
@@ -207,7 +207,8 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			char currentCharacter = Char.MinValue;
+			var currentCharacter = Char.MinValue;
+			
 			do
 			{
 				currentCharacter = _text.NextCharacter;
