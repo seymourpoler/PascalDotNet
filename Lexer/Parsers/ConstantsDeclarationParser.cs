@@ -21,8 +21,7 @@ namespace PascalDotNet.Lexer.Parsers
 			{
 				return result;
 			}
-			IToken token;
-			token = _tokensParser.NextToken;
+			var token = _tokensParser.NextToken;
 			if(!token.IsEqualsTo(new ConstToken()))
 			{
 				throw new UnExpectedTokenException ();
