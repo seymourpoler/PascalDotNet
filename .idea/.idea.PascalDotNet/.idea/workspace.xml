@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5978f8c8-7da8-4ded-8994-00ca19ea4156" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs" afterDir="false" />
-    </list>
+    <list default="true" id="5978f8c8-7da8-4ded-8994-00ca19ea4156" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,188 +24,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Operator.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/Operator.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1548453528678" expanded="true" signature="28:192" ph="{...}" />
-                <marker date="1548453528678" expanded="true" signature="52:190" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HeadingParser.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-              <folding>
-                <marker date="1548454543081" expanded="true" signature="6:103" ph="..." />
-                <marker date="1548454543081" expanded="true" signature="141:909" ph="{...}" />
-                <marker date="1548454543081" expanded="true" signature="171:907" ph="{...}" />
-                <marker date="1548454543081" expanded="true" signature="275:316" ph="{...}" />
-                <marker date="1548454543081" expanded="true" signature="339:904" ph="{...}" />
-                <marker date="1548454543081" expanded="true" signature="428:481" ph="{...}" />
-                <marker date="1548454543081" expanded="true" signature="577:630" ph="{...}" />
-                <marker date="1548454543081" expanded="true" signature="828:881" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VariablesDeclarationParser.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <marker date="1548454599931" expanded="false" signature="6:117" ph="..." />
-                <marker date="1548454599931" expanded="true" signature="155:1491" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="198:1489" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="315:356" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="379:1486" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="515:544" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="625:678" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="805:1464" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="941:997" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="1079:1135" ph="{...}" />
-                <marker date="1548454599931" expanded="true" signature="1274:1330" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Parser.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/Parser.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-              <folding>
-                <marker date="1548445335114" expanded="true" signature="63:834" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="86:832" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="381:636" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="659:829" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tokenizer.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-723">
-              <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
-              <folding>
-                <marker date="1548454308571" expanded="false" signature="6:174" ph="..." />
-                <marker date="1548454308571" expanded="true" signature="204:6576" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="235:310" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="409:2734" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="420:2730" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="458:504" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="638:771" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="678:727" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="804:871" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="903:967" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="993:1064" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1090:1161" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1186:1248" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1273:1336" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1361:1421" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1446:1504" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1529:1595" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1620:1684" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1709:1752" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1777:1853" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1878:1952" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="1977:2053" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2078:2155" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2180:2253" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2278:2345" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2370:2435" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2460:2507" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2532:2594" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2619:2683" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2778:3097" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2789:3093" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="2914:3055" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3017:3049" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3130:3166" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3230:3620" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3348:3560" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3458:3516" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3525:3555" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3681:4094" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3799:4034" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3932:3990" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="3999:4029" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="4162:4248" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="4316:4403" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="4471:4798" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="4861:5109" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="4978:5074" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="5183:5462" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="5300:5398" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="5532:5928" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="5649:5743" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="5780:5875" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="5992:6263" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="6109:6207" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="6325:6571" ph="{...}" />
-                <marker date="1548454308571" expanded="true" signature="6442:6538" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstantsDeclarationParser.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <marker date="1548454487226" expanded="false" signature="6:117" ph="..." />
-                <marker date="1548454487226" expanded="true" signature="155:1481" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="198:1479" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="315:356" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="379:1476" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="517:546" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="629:682" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="809:1454" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="945:1001" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="1083:1139" ph="{...}" />
-                <marker date="1548454487226" expanded="true" signature="1271:1327" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokensParser.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/TokensParser.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-41">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-              <folding>
-                <marker date="1548454133748" expanded="true" signature="6:84" ph="..." />
-                <marker date="1548454133748" expanded="true" signature="114:959" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="148:237" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="281:957" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="401:458" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="485:678" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="497:674" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="538:585" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="708:848" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="720:844" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="760:807" ph="{...}" />
-                <marker date="1548454133748" expanded="true" signature="912:954" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -220,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Lexer/Text.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokensParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/Tokens/AndToken.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokenBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" root0="FORCE_HIGHLIGHTING" />
@@ -279,13 +97,7 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="PascalDotNet (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Lexer" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Extensions" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="PascalDotNet (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Lexer" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Parsers" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tokens" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
@@ -332,12 +144,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548342745885</updated>
       <workItem from="1548342748286" duration="447000" />
-      <workItem from="1548452866172" duration="1738000" />
+      <workItem from="1548452866172" duration="1963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2185000" />
+    <option name="totallyTimeSpent" value="2410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -350,12 +162,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1368" height="749" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Unit Tests" order="7" visible="true" weight="0.32792208" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32792208" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32954547" />
@@ -601,7 +412,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-723">
+        <state relative-caret-position="-566">
           <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
           <folding>
             <marker date="1548454308571" expanded="false" signature="6:174" ph="..." />
@@ -701,10 +512,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/Tokens/AndToken.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <marker date="1548445335114" expanded="true" signature="35:374" ph="{...}" />
+            <marker date="1548445335114" expanded="true" signature="69:372" ph="{...}" />
+            <marker date="1548445335114" expanded="true" signature="248:274" ph="{...}" />
+            <marker date="1548445335114" expanded="true" signature="314:369" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Parsers/VariablesDeclarationParser.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="390">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
           <folding>
             <marker date="1548454599931" expanded="false" signature="6:117" ph="..." />
             <marker date="1548454599931" expanded="true" signature="155:1491" ph="{...}" />

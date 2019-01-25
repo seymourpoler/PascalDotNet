@@ -2,7 +2,15 @@
 
 namespace PascalDotNet.Lexer
 {
-	public class Text
+    public interface IText
+    {
+        char NextCharacter { get; }
+        bool HasMoreCharacters { get; }
+        bool IsTheNextCharacter(char nextCharacter);
+        bool IsTheNextCharacter(Func<char, bool> predicate);
+    }
+
+    public class Text : IText
 	{
 		private readonly char[] _text;
 		private int _position;

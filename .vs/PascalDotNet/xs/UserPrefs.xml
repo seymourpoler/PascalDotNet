@@ -1,0 +1,28 @@
+﻿<Properties RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lexer.Tests/TextTests.cs">
+    <Files>
+      <File FileName="Lexer.Tests/TokenizerTests.cs" Line="410" Column="36" />
+      <File FileName="Lexer/Parser.cs" Line="14" Column="33" />
+      <File FileName="Lexer/Text.cs" Line="5" Column="27" />
+      <File FileName="Lexer.Tests/TextTests.cs" Line="35" Column="27" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="PascalDotNet" expanded="True" selected="True">
+            <Node name="Lexer.Tests" expanded="True">
+              <Node name="PascalDotNet" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Lexer.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
