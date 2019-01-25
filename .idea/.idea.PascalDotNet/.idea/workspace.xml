@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5978f8c8-7da8-4ded-8994-00ca19ea4156" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,19 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeadingParser.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HeadingParser.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="165">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
-                <marker date="1548445335114" expanded="false" signature="6:103" ph="..." />
-                <marker date="1548445335114" expanded="true" signature="141:922" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="171:920" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="275:316" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="339:917" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="441:494" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="590:643" ph="{...}" />
-                <marker date="1548445335114" expanded="true" signature="841:894" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="6:103" ph="..." />
+                <marker date="1548454543081" expanded="true" signature="141:909" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="171:907" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="275:316" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="339:904" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="428:481" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="577:630" ph="{...}" />
+                <marker date="1548454543081" expanded="true" signature="828:881" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -139,10 +140,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConstantsDeclarationParser.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConstantsDeclarationParser.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
+            <state relative-caret-position="120">
               <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <marker date="1548454487226" expanded="false" signature="6:117" ph="..." />
@@ -213,6 +214,7 @@
         <option value="$PROJECT_DIR$/Lexer/TokensParser.cs" />
         <option value="$PROJECT_DIR$/Lexer/Tokenizer.cs" />
         <option value="$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs" />
+        <option value="$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs" />
       </list>
     </option>
   </component>
@@ -306,12 +308,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548342745885</updated>
       <workItem from="1548342748286" duration="447000" />
-      <workItem from="1548452866172" duration="1621000" />
+      <workItem from="1548452866172" duration="1677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2068000" />
+    <option name="totallyTimeSpent" value="2124000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,22 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1548445335114" expanded="false" signature="6:103" ph="..." />
-            <marker date="1548445335114" expanded="true" signature="141:922" ph="{...}" />
-            <marker date="1548445335114" expanded="true" signature="171:920" ph="{...}" />
-            <marker date="1548445335114" expanded="true" signature="275:316" ph="{...}" />
-            <marker date="1548445335114" expanded="true" signature="339:917" ph="{...}" />
-            <marker date="1548445335114" expanded="true" signature="441:494" ph="{...}" />
-            <marker date="1548445335114" expanded="true" signature="590:643" ph="{...}" />
-            <marker date="1548445335114" expanded="true" signature="841:894" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Parser.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -656,7 +642,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Parsers/ConstantsDeclarationParser.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
+        <state relative-caret-position="120">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <marker date="1548454487226" expanded="false" signature="6:117" ph="..." />
@@ -670,6 +656,23 @@
             <marker date="1548454487226" expanded="true" signature="945:1001" ph="{...}" />
             <marker date="1548454487226" expanded="true" signature="1083:1139" ph="{...}" />
             <marker date="1548454487226" expanded="true" signature="1271:1327" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/Parsers/HeadingParser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <marker date="1548454543081" expanded="true" signature="6:103" ph="..." />
+            <marker date="1548454543081" expanded="true" signature="141:909" ph="{...}" />
+            <marker date="1548454543081" expanded="true" signature="171:907" ph="{...}" />
+            <marker date="1548454543081" expanded="true" signature="275:316" ph="{...}" />
+            <marker date="1548454543081" expanded="true" signature="339:904" ph="{...}" />
+            <marker date="1548454543081" expanded="true" signature="428:481" ph="{...}" />
+            <marker date="1548454543081" expanded="true" signature="577:630" ph="{...}" />
+            <marker date="1548454543081" expanded="true" signature="828:881" ph="{...}" />
           </folding>
         </state>
       </provider>

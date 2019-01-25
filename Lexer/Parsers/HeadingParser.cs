@@ -15,8 +15,7 @@ namespace PascalDotNet.Lexer.Parsers
 
 		public Node Parse()
 		{
-			IToken token;
-			token = _tokensParser.NextToken;
+			var token = _tokensParser.NextToken;
 			if(!token.IsEqualsTo(new ProgramToken()))
 			{
 				throw new UnExpectedTokenException ();
