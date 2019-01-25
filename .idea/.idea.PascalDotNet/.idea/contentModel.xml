@@ -73,6 +73,7 @@
       </e>
       <e p="Lexer.Tests" t="IncludeRecursive">
         <e p="Lexer.Tests.csproj" t="IncludeRecursive" />
+        <e p="NodeTests.cs" t="Include" />
         <e p="ParserTests.cs" t="Include" />
         <e p="TextTests.cs" t="Include" />
         <e p="TokenizerTests.cs" t="Include" />

@@ -61,6 +61,7 @@
     <Compile Include="ParserTests.cs" />
     <Compile Include="Tokens\TokenComparatorTest.cs" />
     <Compile Include="TokensParserTests.cs" />
+    <Compile Include="NodeTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
