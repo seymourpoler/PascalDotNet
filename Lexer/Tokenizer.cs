@@ -151,7 +151,7 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			bool exit = false;
+			var exit = false;
 
 			while(!exit)
 			{
