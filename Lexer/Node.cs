@@ -7,7 +7,7 @@ namespace PascalDotNet.Lexer
 	{
 		private List<Node> _nodes;
 
-		public ReadOnlyCollection<Node> Nodes{get{return _nodes.AsReadOnly ();}}
+		public IReadOnlyCollection<Node> Nodes{ get { return _nodes.AsReadOnly (); } }
 		public string Name { get; private set;}
 
 		public Node (string name, List<Node> nodes)
