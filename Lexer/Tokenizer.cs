@@ -151,9 +151,8 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			var exit = false;
 
-			while(!exit)
+			while(true)
 			{
 				if(_text.IsTheNextCharacter(nextCharacter => char.IsLetter (nextCharacter) && nextCharacter != ' '))
 				{
@@ -161,20 +160,17 @@ namespace PascalDotNet.Lexer
 				}
 				else
 				{
-					exit = true;
+					return TokenBuilder.Build (tokenValue.ToString ());
 				}
 			}
-
-			return TokenBuilder.Build (tokenValue.ToString ());
 		}
 
 		private IToken BuildIntegerOrDecimalToken(char character)
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			bool exit = false;
 
-			while(!exit)
+			while(true)
 			{
 				if(_text.IsTheNextCharacter(nextCharacter => char.IsDigit (nextCharacter) || '.' == nextCharacter && nextCharacter != ' '))
 				{
@@ -182,11 +178,9 @@ namespace PascalDotNet.Lexer
 				}
 				else
 				{
-					exit = true;
+					return TokenBuilder.Build (tokenValue.ToString ());
 				}
 			}
-
-			return TokenBuilder.Build (tokenValue.ToString ());
 		}
 
 		private IToken BuildLiteralTokenWithSingleQuotes(char character)
