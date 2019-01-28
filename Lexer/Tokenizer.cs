@@ -8,8 +8,8 @@ namespace PascalDotNet.Lexer
 {
 	public interface ITokenizer
 	{
-		IToken NextToken{ get;}
-		IReadOnlyCollection<IToken> Tokens{ get;}
+		IToken NextToken { get; }
+		IReadOnlyCollection<IToken> Tokens { get; }
 	}
 
 	public class Tokenizer : ITokenizer
@@ -200,7 +200,7 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			char currentCharacter = Char.MinValue;
+			var currentCharacter = Char.MinValue;
 			do
 			{
 				currentCharacter = _text.NextCharacter;
