@@ -125,19 +125,16 @@ namespace PascalDotNet.Lexer
 			get
 			{
 				var tokens = new List<IToken> ();
-				var end = false;
 				IToken token;
-				//TODO: maybe do-while
-				while(!end)
+				while(true)
 				{
 					token = NextToken;
 					tokens.Add (token);
 					if(token.IsEqualsTo(new EndOfFileToken()))
 					{
-						end = true;
+						return tokens.AsReadOnly ();
 					}
 				}
-				return tokens.AsReadOnly ();
 			}
 		}
 
