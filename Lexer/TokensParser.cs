@@ -1,6 +1,7 @@
-﻿using System.Collections.ObjectModel;
-using PascalDotNet.Lexer.Tokens;
+﻿using PascalDotNet.Lexer.Tokens;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PascalDotNet.Lexer
 {
@@ -13,7 +14,7 @@ namespace PascalDotNet.Lexer
 	public class TokensParser : ITokensParser
 	{
 		private int _position;
-		private ReadOnlyCollection<IToken> _tokens;
+		private IReadOnlyCollection<IToken> _tokens;
 
 		public TokensParser (ITokenizer tokenizer)
 		{
@@ -29,7 +30,7 @@ namespace PascalDotNet.Lexer
 				{
 					return new EndOfFileToken ();
 				}
-				var tokenResult = _tokens [_position];
+				var tokenResult = _tokens.ElementAt(_position);
 				_position++;
 				return tokenResult;
 			}
@@ -43,7 +44,7 @@ namespace PascalDotNet.Lexer
 				{
 					return new EndOfFileToken ();
 				}
-				return _tokens [_position];
+				return _tokens.ElementAt(_position);
 			}
 		}
 

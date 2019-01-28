@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
@@ -10,7 +9,7 @@ namespace PascalDotNet.Lexer
 	public interface ITokenizer
 	{
 		IToken NextToken{ get;}
-		ReadOnlyCollection<IToken> Tokens{ get;}
+		IReadOnlyCollection<IToken> Tokens{ get;}
 	}
 
 	public class Tokenizer : ITokenizer
@@ -121,7 +120,7 @@ namespace PascalDotNet.Lexer
 			}
 		}
 
-		public ReadOnlyCollection<IToken> Tokens
+		public IReadOnlyCollection<IToken> Tokens
 		{
 			get
 			{
