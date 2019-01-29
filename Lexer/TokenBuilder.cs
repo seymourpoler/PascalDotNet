@@ -6,7 +6,7 @@ namespace PascalDotNet.Lexer
 {
 	public class TokenBuilder
 	{
-		static string[] keywords = { 
+		static readonly string[] keywords = { 
 			"program",
 			"const",
 			"user",
@@ -23,7 +23,6 @@ namespace PascalDotNet.Lexer
 			"record",
 			"array",
 			"set",
-			"of",
 			"case",
 			"goto",
 			"label",
