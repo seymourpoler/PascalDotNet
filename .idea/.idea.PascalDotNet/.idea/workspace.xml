@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5978f8c8-7da8-4ded-8994-00ca19ea4156" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Lexer/Tokenizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Tokenizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lexer/TokenBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/TokenBuilder.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Tokenizer.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tokenizer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="544">
+              <caret line="158" column="42" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
               <folding>
                 <marker date="1548687438441" expanded="true" signature="6:136" ph="..." />
                 <marker date="1548687438441" expanded="true" signature="166:6397" ph="{...}" />
@@ -95,6 +95,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TokenBuilder.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lexer/TokenBuilder.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding>
+                <marker date="1548774933192" expanded="false" signature="6:83" ph="..." />
+                <marker date="1548774933192" expanded="true" signature="113:1761" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="142:1759" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="175:553" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="598:1343" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="660:702" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="758:798" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="852:890" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="943:985" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1039:1082" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1107:1154" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1180:1227" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1252:1299" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1384:1531" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1432:1510" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1475:1505" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1572:1641" ph="{...}" />
+                <marker date="1548774933192" expanded="true" signature="1681:1756" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -108,13 +137,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Lexer/Tokens/IdentifierToken.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer.Tests/ParserTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/TokenBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Extensions/StringExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokensParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Extensions/ReadOnlyCollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer/Tokens/IdentifierToken.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Text.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer.Tests/ParserTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Parser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Node.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Consts.cs" root0="FORCE_HIGHLIGHTING" />
@@ -130,6 +160,7 @@
         <option value="$PROJECT_DIR$/Lexer/Extensions/ReadOnlyCollectionExtensions.cs" />
         <option value="$PROJECT_DIR$/Lexer/TokensParser.cs" />
         <option value="$PROJECT_DIR$/Lexer/Tokenizer.cs" />
+        <option value="$PROJECT_DIR$/Lexer/TokenBuilder.cs" />
       </list>
     </option>
   </component>
@@ -214,12 +245,12 @@
       <updated>1548342745885</updated>
       <workItem from="1548342748286" duration="1993000" />
       <workItem from="1548345981765" duration="2410000" />
-      <workItem from="1548685463764" duration="1987000" />
+      <workItem from="1548685463764" duration="2838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6390000" />
+    <option name="totallyTimeSpent" value="7241000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -243,7 +274,7 @@
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="NuGet" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.32897604" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
@@ -600,19 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer/Parser.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <marker date="1548338602438" expanded="true" signature="63:834" ph="{...}" />
-            <marker date="1548338602438" expanded="true" signature="86:832" ph="{...}" />
-            <marker date="1548338602438" expanded="true" signature="381:636" ph="{...}" />
-            <marker date="1548338602438" expanded="true" signature="659:829" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Node.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -693,10 +711,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/Parser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <marker date="1548338602438" expanded="true" signature="63:834" ph="{...}" />
+            <marker date="1548338602438" expanded="true" signature="86:832" ph="{...}" />
+            <marker date="1548338602438" expanded="true" signature="381:636" ph="{...}" />
+            <marker date="1548338602438" expanded="true" signature="659:829" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Tokenizer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        <state relative-caret-position="544">
+          <caret line="158" column="42" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
           <folding>
             <marker date="1548687438441" expanded="true" signature="6:136" ph="..." />
             <marker date="1548687438441" expanded="true" signature="166:6397" ph="{...}" />
@@ -755,6 +786,33 @@
             <marker date="1548687438441" expanded="true" signature="5930:6028" ph="{...}" />
             <marker date="1548687438441" expanded="true" signature="6146:6392" ph="{...}" />
             <marker date="1548687438441" expanded="true" signature="6263:6359" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/TokenBuilder.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <marker date="1548774933192" expanded="false" signature="6:83" ph="..." />
+            <marker date="1548774933192" expanded="true" signature="113:1761" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="142:1759" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="175:553" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="598:1343" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="660:702" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="758:798" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="852:890" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="943:985" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1039:1082" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1107:1154" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1180:1227" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1252:1299" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1384:1531" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1432:1510" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1475:1505" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1572:1641" ph="{...}" />
+            <marker date="1548774933192" expanded="true" signature="1681:1756" ph="{...}" />
           </folding>
         </state>
       </provider>
