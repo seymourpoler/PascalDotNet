@@ -1,7 +1,6 @@
-﻿using PascalDotNet.Lexer.Tokens;
-using PascalDotNet.Lexer.Exceptions;
+﻿using PascalDotNet.Lexer.Exceptions;
 
-namespace PascalDotNet.Lexer
+namespace PascalDotNet.Lexer.Tokens
 {
 	public class ProgramToken : IToken
 	{
