@@ -54,7 +54,7 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
-        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInConstantsDeclaration()
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonIsNotFound()
         {
             tokensParser
                 .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
