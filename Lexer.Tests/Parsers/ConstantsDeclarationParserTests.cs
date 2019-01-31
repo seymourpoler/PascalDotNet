@@ -39,10 +39,8 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         public void ThrowsUnExpectedTokenExceptionWhenIdentifierIsNotFound()
         {
             tokensParser
-                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
-                .Returns (true)
-                .Returns (true)
-                .Returns (false);
+                .Setup (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
 
             tokensParser.SetupSequence(x => x.NextToken)
                 .Returns(new ConstToken())
@@ -54,13 +52,28 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenEqualTokenIsNotFound()
+        {
+            tokensParser
+                .Setup(x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
+
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new ConstToken())
+                .Returns(new IdentifierToken("PI"))
+                .Returns(new EndOfFileToken());
+
+            Action action = () => parser.Parse ();
+
+            action.Should().Throw<UnExpectedTokenException> ();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenSemiColonIsNotFound()
         {
             tokensParser
-                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
-                .Returns (true)
-                .Returns (true)
-                .Returns (false);
+                .Setup (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
 
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns(new ConstToken())
