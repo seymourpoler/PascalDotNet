@@ -28,7 +28,7 @@ namespace PascalDotNet.Lexer.Parsers
 				throw new UnExpectedTokenException ();
 			}
 
-			var result = new Node (
+			var result = new Node(
 				name: Consts.PROGRAM_HEADING,
 				nodes: new List<Node> {new Node(token.Value)});
 

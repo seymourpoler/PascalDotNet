@@ -104,7 +104,7 @@ namespace PascalDotNet.Lexer.Tests
 		}
 
 		[Test]
-		public void ParseTwoConstDefinitions()
+		public void ParseDefinitionOfTwoConstants()
 		{
 			tokensParser
 				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
