@@ -79,7 +79,6 @@ namespace PascalDotNet.Lexer.Tests.Parsers
                 .Returns(new ConstToken())
                 .Returns(new IdentifierToken("PI"))
                 .Returns(new EqualToken())
-                .Returns(new SemiColonToken ())
                 .Returns(new EndOfFileToken());
 
             Action action = () => parser.Parse ();
