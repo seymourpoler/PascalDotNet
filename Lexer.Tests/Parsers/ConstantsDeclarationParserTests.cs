@@ -1,6 +1,8 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
+using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Parsers;
 using PascalDotNet.Lexer.Tokens;
 
@@ -9,20 +11,20 @@ namespace PascalDotNet.Lexer.Tests.Parsers
     [TestFixture]
     public class ConstantsDeclarationParserTests
     {
-        private Mock<ITokensParser> tokensParse;
+        private Mock<ITokensParser> tokensParser;
         private ConstantsDeclarationParser parser;
 
         [SetUp]
         public void SetUp()
         {
-            tokensParse = new Mock<ITokensParser>();
-            parser = new ConstantsDeclarationParser(tokensParse.Object);   
+            tokensParser = new Mock<ITokensParser>();
+            parser = new ConstantsDeclarationParser(tokensParser.Object);   
         }
 
         [Test]
         public void ParseOnlyConstsDeclaration()
         {
-            tokensParse
+            tokensParser
                 .SetupSequence(x => x.NextToken)
                 .Returns(new ConstToken())
                 .Returns(new EqualToken());
@@ -31,6 +33,30 @@ namespace PascalDotNet.Lexer.Tests.Parsers
 
             result.Name.Should().Be(Consts.CONSTANTS_DECLARATION);
             result.Nodes.Should().BeEmpty();
+        }
+        
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInConstantsDeclaration()
+        {
+            tokensParser
+                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true)
+                .Returns (true)
+                .Returns (false);
+
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new ProgramToken ())
+                .Returns(new IdentifierToken ("Test"))
+                .Returns(new SemiColonToken ())
+                .Returns(new ConstToken())
+                .Returns(new IdentifierToken("PI"))
+                .Returns(new EqualToken())
+                .Returns(new SemiColonToken ())
+                .Returns(new EndOfFileToken());
+
+            Action action = () => parser.Parse ();
+
+            action.Should().Throw<UnExpectedTokenException> ();
         }
     }
 }
