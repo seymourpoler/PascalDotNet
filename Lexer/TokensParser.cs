@@ -1,11 +1,7 @@
 ﻿using PascalDotNet.Lexer.Tokens;
 using System;
-<<<<<<< HEAD
 using System.Collections.Generic;
 using System.Linq;
-=======
-using System.Collections.ObjectModel;
->>>>>>> 702552a597e84b96fca545aec7cf9cc8bba89608
 
 namespace PascalDotNet.Lexer
 {
