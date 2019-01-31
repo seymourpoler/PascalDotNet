@@ -147,6 +147,10 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
+<<<<<<< HEAD
+=======
+			var exit = false;
+>>>>>>> 702552a597e84b96fca545aec7cf9cc8bba89608
 
 			while(true)
 			{
@@ -165,6 +169,10 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
+<<<<<<< HEAD
+=======
+			var exit = false;
+>>>>>>> 702552a597e84b96fca545aec7cf9cc8bba89608
 
 			while(true)
 			{
@@ -198,6 +206,10 @@ namespace PascalDotNet.Lexer
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
 			var currentCharacter = Char.MinValue;
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 702552a597e84b96fca545aec7cf9cc8bba89608
 			do
 			{
 				currentCharacter = _text.NextCharacter;
