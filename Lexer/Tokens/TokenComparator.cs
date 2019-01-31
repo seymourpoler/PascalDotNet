@@ -25,7 +25,7 @@ namespace PascalDotNet.Lexer.Tokens
 				return true;
 			}
 
-			if(tokenFirst.Value.ToLower() != tokenSecond.Value.ToLower())
+			if(!String.Equals(tokenFirst.Value.ToLower(), tokenSecond.Value.ToLower(), StringComparison.CurrentCultureIgnoreCase))
 			{
 				return false;
 			}
