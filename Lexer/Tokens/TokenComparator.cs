@@ -2,7 +2,7 @@
 
 namespace PascalDotNet.Lexer.Tokens
 {
-	public class TokenComparator
+	public static class TokenComparator
 	{
 		public static bool Equals(IToken tokenFirst, IToken tokenSecond)
 		{
