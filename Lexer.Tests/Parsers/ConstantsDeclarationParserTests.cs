@@ -36,6 +36,24 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenIdentifierIsNotFound()
+        {
+            tokensParser
+                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true)
+                .Returns (true)
+                .Returns (false);
+
+            tokensParser.SetupSequence(x => x.NextToken)
+                .Returns(new ConstToken())
+                .Returns(new EqualToken());
+
+            Action action = () => parser.Parse ();
+
+            action.Should().Throw<UnExpectedTokenException> ();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInConstantsDeclaration()
         {
             tokensParser
@@ -45,9 +63,6 @@ namespace PascalDotNet.Lexer.Tests.Parsers
                 .Returns (false);
 
             tokensParser.SetupSequence (x => x.NextToken)
-                .Returns(new ProgramToken ())
-                .Returns(new IdentifierToken ("Test"))
-                .Returns(new SemiColonToken ())
                 .Returns(new ConstToken())
                 .Returns(new IdentifierToken("PI"))
                 .Returns(new EqualToken())
