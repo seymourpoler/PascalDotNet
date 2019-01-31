@@ -52,32 +52,7 @@ namespace PascalDotNet.Lexer.Tests
 			result.Nodes.First ().Nodes.First().Name.Should ().Be (programHeaderIdentificator);
 		}
 
-		[Test]
-		public void ParseConstDefinition()
-		{
-			tokensParser
-				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
-				.Returns (true)
-				.Returns (true)
-				.Returns (false);
-			
-			tokensParser.SetupSequence (x => x.NextToken)
-				.Returns(new ProgramToken ())
-				.Returns(new IdentifierToken ("Test"))
-				.Returns(new SemiColonToken ())
-				.Returns(new ConstToken())
-				.Returns(new IdentifierToken("PI"))
-				.Returns(new EqualToken())
-				.Returns(new DecimalToken("3.14"))
-				.Returns(new SemiColonToken ())
-				.Returns(new EndOfFileToken());
-
-			var result = parser.Parse ();
-
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANTS_DECLARATION);
-			result.Nodes.Second ().Nodes.First().Name.Should ().Be ("PI");
-			result.Nodes.Second ().Nodes.First().Nodes.First().Name.Should ().Be ("3.14");
-		}
+		
 
 		[Test]
 		public void ParseDefinitionOfTwoConstants()
