@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PascalDotNet.Lexer.Tokens
+﻿namespace PascalDotNet.Lexer.Tokens
 {
 	public class PlusToken : IToken
 	{
