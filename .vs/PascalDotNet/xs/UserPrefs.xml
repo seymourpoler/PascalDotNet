@@ -1,9 +1,10 @@
 ﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupConfiguration="{DF0914CC-A856-463E-B609-119D150E0521}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Lexer.Tests/ParserTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lexer.Tests/Parsers/TypesDeclarationParserTests.cs">
     <Files>
-      <File FileName="Lexer/Node.cs" Line="10" Column="76" />
-      <File FileName="Lexer.Tests/NodeTests.cs" Line="9" Column="27" />
-      <File FileName="Lexer.Tests/ParserTests.cs" Line="5" Column="1" />
+      <File FileName="Lexer/Parsers/VariablesDeclarationParser.cs" Line="10" Column="47" />
+      <File FileName="Lexer/Parsers/ConstantsDeclarationParser.cs" Line="37" Column="17" />
+      <File FileName="Lexer/Parsers/TypesDeclarationParser.cs" Line="7" Column="39" />
+      <File FileName="Lexer.Tests/Parsers/TypesDeclarationParserTests.cs" Line="9" Column="20" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
