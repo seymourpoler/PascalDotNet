@@ -1,4 +1,4 @@
-﻿using System;
+﻿using PascalDotNet.Lexer.Tokens;
 
 namespace PascalDotNet.Lexer.Parsers
 {
@@ -13,6 +13,12 @@ namespace PascalDotNet.Lexer.Parsers
 
         public Node Parse()
         {
+            var result = new Node(Consts.TYPES_DECLARATION);
+            if (!_tokensParser.WhereTheNextToken(token => token is TypeToken))
+            {
+                return result;
+            }
+
             throw new System.NotImplementedException();
         }
     }

@@ -85,6 +85,7 @@
     <Compile Include="Tokens\VarToken.cs" />
     <Compile Include="CodeCILGenerator.cs" />
     <Compile Include="Parsers\TypesDeclarationParser.cs" />
+    <Compile Include="Tokens\TypeToken.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
