@@ -2,7 +2,7 @@
 
 namespace PascalDotNet.Lexer.Tokens
 {
-	public class TokenComparator
+	public static class TokenComparator
 	{
 		public static bool Equals(IToken tokenFirst, IToken tokenSecond)
 		{
@@ -25,7 +25,7 @@ namespace PascalDotNet.Lexer.Tokens
 				return true;
 			}
 
-			if(tokenFirst.Value.ToLower() != tokenSecond.Value.ToLower())
+			if(!String.Equals(tokenFirst.Value.ToLower(), tokenSecond.Value.ToLower(), StringComparison.CurrentCultureIgnoreCase))
 			{
 				return false;
 			}

@@ -1,4 +1,5 @@
 ﻿using PascalDotNet.Lexer.Tokens;
+using PascalDotNet.Lexer.Exceptions;
 
 namespace PascalDotNet.Lexer.Parsers
 {
@@ -14,9 +15,14 @@ namespace PascalDotNet.Lexer.Parsers
         public Node Parse()
         {
             var result = new Node(Consts.TYPES_DECLARATION);
-            if (!_tokensParser.WhereTheNextToken(token => token is TypeToken))
+            if (!_tokensParser.WhereTheNextToken(x => x is TypeToken))
             {
                 return result;
+            }
+            var token = _tokensParser.NextToken;
+            if (!token.IsEqualsTo(new TypeToken()))
+            {
+                throw new UnExpectedTokenException();
             }
 
             throw new System.NotImplementedException();

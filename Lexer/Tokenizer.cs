@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
@@ -9,8 +8,8 @@ namespace PascalDotNet.Lexer
 {
 	public interface ITokenizer
 	{
-		IToken NextToken{ get;}
-		ReadOnlyCollection<IToken> Tokens{ get;}
+		IToken NextToken { get; }
+		IReadOnlyCollection<IToken> Tokens { get; }
 	}
 
 	public class Tokenizer : ITokenizer
@@ -26,7 +25,7 @@ namespace PascalDotNet.Lexer
 					return new EndOfFileToken();
 				}
 
-				char character = _text.NextCharacter;
+				var character = _text.NextCharacter;
 				while(character == ' ' || character == '\r' || character == '\t' || character == '\n')
 				{
 					if(!_text.HasMoreCharacters)
@@ -121,24 +120,21 @@ namespace PascalDotNet.Lexer
 			}
 		}
 
-		public ReadOnlyCollection<IToken> Tokens
+		public IReadOnlyCollection<IToken> Tokens
 		{
 			get
 			{
 				var tokens = new List<IToken> ();
-				var end = false;
 				IToken token;
-				//TODO: maybe do-while
-				while(!end)
+				while(true)
 				{
 					token = NextToken;
 					tokens.Add (token);
 					if(token.IsEqualsTo(new EndOfFileToken()))
 					{
-						end = true;
+						return tokens.AsReadOnly ();
 					}
 				}
-				return tokens.AsReadOnly ();
 			}
 		}
 
@@ -151,9 +147,8 @@ namespace PascalDotNet.Lexer
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			var exit = false;
 
-			while(!exit)
+			while(true)
 			{
 				if(_text.IsTheNextCharacter(nextCharacter => char.IsLetter (nextCharacter) && nextCharacter != ' '))
 				{
@@ -161,20 +156,17 @@ namespace PascalDotNet.Lexer
 				}
 				else
 				{
-					exit = true;
+					return TokenBuilder.Build (tokenValue.ToString ());
 				}
 			}
-
-			return TokenBuilder.Build (tokenValue.ToString ());
 		}
 
 		private IToken BuildIntegerOrDecimalToken(char character)
 		{
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
-			var exit = false;
 
-			while(!exit)
+			while(true)
 			{
 				if(_text.IsTheNextCharacter(nextCharacter => char.IsDigit (nextCharacter) || '.' == nextCharacter && nextCharacter != ' '))
 				{
@@ -182,11 +174,9 @@ namespace PascalDotNet.Lexer
 				}
 				else
 				{
-					exit = true;
+					return TokenBuilder.Build (tokenValue.ToString ());
 				}
 			}
-
-			return TokenBuilder.Build (tokenValue.ToString ());
 		}
 
 		private IToken BuildLiteralTokenWithSingleQuotes(char character)
@@ -208,7 +198,7 @@ namespace PascalDotNet.Lexer
 			var tokenValue = new StringBuilder ();
 			tokenValue.Append (character);
 			var currentCharacter = Char.MinValue;
-			
+
 			do
 			{
 				currentCharacter = _text.NextCharacter;

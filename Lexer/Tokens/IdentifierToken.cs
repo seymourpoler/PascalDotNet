@@ -17,7 +17,6 @@ namespace PascalDotNet.Lexer.Tokens
 		{
 			return TokenComparator.Equals(this, token);
 		}
-
 	}
 }
 
