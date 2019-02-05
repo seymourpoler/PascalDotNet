@@ -84,6 +84,7 @@
           <e p="ConstantsDeclarationParserTests.cs" t="Include" />
           <e p="HeadingParserTests.cs" t="Include" />
           <e p="TypesDeclarationParserTests.cs" t="Include" />
+          <e p="VariablesDeclarationParserTests.cs" t="Include" />
         </e>
         <e p="ParserTests.cs" t="Include" />
         <e p="TextTests.cs" t="Include" />
