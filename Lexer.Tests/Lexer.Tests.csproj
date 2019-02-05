@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Parsers\ConstantsDeclarationParserTests.cs" />
+    <Compile Include="Parsers\HeadingParserTests.cs" />
     <Compile Include="TokenizerTests.cs" />
     <Compile Include="TextTests.cs" />
     <Compile Include="ParserTests.cs" />
