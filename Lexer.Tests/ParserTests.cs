@@ -25,39 +25,6 @@ namespace PascalDotNet.Lexer.Tests
 
 		
 
-		
-
-		[Test]
-		public void ParseDefinitionOfTwoConstants()
-		{
-			tokensParser
-				.SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
-				.Returns (true)
-				.Returns (true)
-				.Returns (true)
-				.Returns(false);
-
-			tokensParser.SetupSequence (x => x.NextToken)
-				.Returns (new ProgramToken ())
-				.Returns (new IdentifierToken ("Test"))
-				.Returns (new SemiColonToken ())
-				.Returns(new ConstToken())
-				.Returns(new IdentifierToken("PI"))
-				.Returns(new EqualToken())
-				.Returns(new DecimalToken("3.14"))
-				.Returns (new SemiColonToken ())
-				.Returns(new IdentifierToken("MESSAGE"))
-				.Returns(new EqualToken())
-				.Returns(new LiteralToken("'error in'"))
-				.Returns (new SemiColonToken ());
-
-			var result = parser.Parse ();
-
-			result.Nodes.Second ().Name.Should ().Be (Consts.CONSTANTS_DECLARATION);
-			result.Nodes.Second ().Nodes.Second().Name.Should ().Be ("MESSAGE");
-			result.Nodes.Second ().Nodes.Second().Nodes.First().Name.Should ().Be ("'error in'");
-		}
-
 		[Test]
 		public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInVariablesDeclaration()
 		{
