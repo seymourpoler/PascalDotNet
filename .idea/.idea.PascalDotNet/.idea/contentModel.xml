@@ -23,6 +23,7 @@
         <e p="Parsers" t="Include">
           <e p="ConstantsDeclarationParser.cs" t="Include" />
           <e p="HeadingParser.cs" t="Include" />
+          <e p="TypesDeclarationParser.cs" t="Include" />
           <e p="VariablesDeclarationParser.cs" t="Include" />
         </e>
         <e p="Properties" t="Include">
@@ -67,6 +68,7 @@
           <e p="SlashToken.cs" t="Include" />
           <e p="StarToken.cs" t="Include" />
           <e p="TokenComparator.cs" t="Include" />
+          <e p="TypeToken.cs" t="Include" />
           <e p="VarToken.cs" t="Include" />
         </e>
         <e p="TokensParser.cs" t="Include" />
@@ -80,6 +82,7 @@
         <e p="packages.config" t="Include" />
         <e p="Parsers" t="Include">
           <e p="ConstantsDeclarationParserTests.cs" t="Include" />
+          <e p="TypesDeclarationParserTests.cs" t="Include" />
         </e>
         <e p="ParserTests.cs" t="Include" />
         <e p="TextTests.cs" t="Include" />

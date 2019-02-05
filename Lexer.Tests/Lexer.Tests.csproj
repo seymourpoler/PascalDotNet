@@ -76,13 +76,10 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup />
   <ItemGroup>
     <Folder Include="Parsers\" />
   </ItemGroup>
-=======
->>>>>>> 0e92a4aa1953c15ff21bce0fe8b4b157afa77d69
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
