@@ -22,6 +22,19 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ReturnEmptyVariableDeclaration()
+        {
+            tokensParser
+                .SetupSequence(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(false);
+
+            var result = parser.Parse();
+
+            result.Name.Should().Be(Consts.VARIABLES_DECLARATION);
+            result.Nodes.Should().BeEmpty();
+        }
+        
+        [Test]
         public void ParseVariablesDeclaration()
         {
             tokensParser
