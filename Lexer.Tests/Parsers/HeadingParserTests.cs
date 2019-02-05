@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
@@ -32,6 +33,22 @@ namespace PascalDotNet.Lexer.Tests.Parsers
             Action action = () => parser.Parse ();
 
             action.Should().Throw<UnExpectedTokenException> ();
+        }
+        
+        [Test]
+        public void ParseHeadingProgramWithOnlyIdentificator()
+        {
+            const string programHeaderIdentificator = "Test";
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns (new ProgramToken ())
+                .Returns (new IdentifierToken (programHeaderIdentificator))
+                .Returns (new SemiColonToken ())
+                .Returns(new EndOfFileToken());
+
+            var result = parser.Parse ();
+
+            result.Name.Should ().Be (Consts.PROGRAM_HEADING);
+            result.Nodes.First().Name.Should ().Be (programHeaderIdentificator);
         }
     }
 }

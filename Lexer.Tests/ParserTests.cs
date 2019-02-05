@@ -23,21 +23,7 @@ namespace PascalDotNet.Lexer.Tests
 				tokensParser: tokensParser.Object);
 		}
 
-		[Test]
-		public void ParseHeadingProgramWithOnlyIdentificator()
-		{
-			const string programHeaderIdentificator = "Test";
-			tokensParser.SetupSequence (x => x.NextToken)
-				.Returns (new ProgramToken ())
-				.Returns (new IdentifierToken (programHeaderIdentificator))
-				.Returns (new SemiColonToken ())
-				.Returns(new EndOfFileToken());
-
-			var result = parser.Parse ();
-
-			result.Nodes.First().Name.Should ().Be (Consts.PROGRAM_HEADING);
-			result.Nodes.First ().Nodes.First().Name.Should ().Be (programHeaderIdentificator);
-		}
+		
 
 		
 
