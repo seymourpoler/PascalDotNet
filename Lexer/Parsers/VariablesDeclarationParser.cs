@@ -27,7 +27,7 @@ namespace PascalDotNet.Lexer.Parsers
 				throw new UnExpectedTokenException ();
 			}
 
-			while(_tokensParser.WhereTheNextToken (x => x.GetType ().Name.Equals(new IdentifierToken (String.Empty).GetType ().Name)))
+			while(_tokensParser.WhereTheNextToken (x => x is IdentifierToken))
 			{
 				var identifierToken = _tokensParser.NextToken;
 				if(!identifierToken.IsEqualsTo(new IdentifierToken(identifierToken.Value)))
