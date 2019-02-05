@@ -23,6 +23,18 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenProgramTokenIsMissingInProgramDeclaration()
+        {
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns (new IdentifierToken ("Test"))
+                .Returns (new EndOfFileToken ());
+
+            Action action = () => parser.Parse ();
+
+            action.Should().Throw<UnExpectedTokenException> ();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenIdentifierTokenIsMissingInProgramDeclaration()
         {
             tokensParser.SetupSequence (x => x.NextToken)
