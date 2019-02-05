@@ -43,7 +43,6 @@ namespace PascalDotNet.Lexer.Tests.Parsers
             tokensParser
                 .Setup (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
                 .Returns (true);
-
             tokensParser.SetupSequence(x => x.NextToken)
                 .Returns(new ConstToken())
                 .Returns(new EqualToken());
@@ -59,11 +58,31 @@ namespace PascalDotNet.Lexer.Tests.Parsers
             tokensParser
                 .Setup(x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
                 .Returns (true);
-
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns(new ConstToken())
                 .Returns(new IdentifierToken("PI"))
                 .Returns(new EndOfFileToken());
+
+            Action action = () => parser.Parse ();
+
+            action.Should().Throw<UnExpectedTokenException> ();
+        }
+        
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsNotFound()
+        {
+            tokensParser
+                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true)
+                .Returns (true)
+                .Returns (false);
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns (new ProgramToken ())
+                .Returns (new IdentifierToken ("Test"))
+                .Returns (new SemiColonToken ())
+                .Returns (new VarToken ())
+                .Returns (new IdentifierToken ("position"))
+                .Returns (new ColonToken ());
 
             Action action = () => parser.Parse ();
 
@@ -76,7 +95,6 @@ namespace PascalDotNet.Lexer.Tests.Parsers
             tokensParser
                 .Setup (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
                 .Returns (true);
-
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns(new ConstToken())
                 .Returns(new IdentifierToken("PI"))
@@ -97,7 +115,6 @@ namespace PascalDotNet.Lexer.Tests.Parsers
                 .Returns (true)
                 .Returns (true)
                 .Returns (false);
-			
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns(new ConstToken())
                 .Returns(new IdentifierToken("PI"))
