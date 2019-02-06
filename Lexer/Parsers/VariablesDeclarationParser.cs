@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Tokens;
 
@@ -47,6 +46,7 @@ namespace PascalDotNet.Lexer.Parsers
 				{
 					throw new UnExpectedTokenException ();
 				}
+				
 				result.Add (new Node (
 					name: identifierToken.Value,
 					nodes: new List<Node>{ new Node (variableTypeToken.Value) }));

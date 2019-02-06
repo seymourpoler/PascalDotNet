@@ -36,7 +36,36 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenVarTokenIsNotFound()
+        {
+            tokensParser
+                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new IdentifierToken("position"));
+            
+            Action action = () =>  parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenColonTokenIsNotFound()
+        {
+            tokensParser
+                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"));
+            
+            Action action = () =>  parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsNotFound()
         {
             tokensParser
                 .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
