@@ -53,11 +53,13 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         public void ThrowsUnExpectedTokenExceptionWhenColonTokenIsNotFound()
         {
             tokensParser
-                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
-                .Returns (true);
-            tokensParser.SetupSequence (x => x.NextToken)
+                .SetupSequence(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true)
+                .Returns(true);
+            tokensParser.SetupSequence(x => x.NextToken)
                 .Returns(new VarToken())
-                .Returns(new IdentifierToken("position"));
+                .Returns(new IdentifierToken("position"))
+                .Returns(new EndOfFileToken());
             
             Action action = () =>  parser.Parse();
 
