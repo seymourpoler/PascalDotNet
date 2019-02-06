@@ -67,14 +67,38 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenKeyWordTokenIsNotFound()
+        {
+            tokensParser
+                .SetupSequence(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true)
+                .Returns(true);
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"))
+                .Returns(new ColonToken())
+                .Returns(new VarToken())
+                .Returns(new EndOfFileToken());
+            
+            Action action = () =>  parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsNotFound()
         {
             tokensParser
-                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
-                .Returns (true);
+                .SetupSequence(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true)
+                .Returns(true);
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns(new VarToken())
-                .Returns(new IdentifierToken("position"));
+                .Returns(new IdentifierToken("position"))
+                .Returns(new ColonToken())
+                .Returns(new KeyWordToken("INTEGER"))
+                .Returns(new ConstToken())
+                .Returns(new EndOfFileToken());
             
             Action action = () =>  parser.Parse();
 
