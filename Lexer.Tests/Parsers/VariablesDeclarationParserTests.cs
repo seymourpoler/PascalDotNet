@@ -23,6 +23,19 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
 
         [Test]
+        public void ReturnEmptyVariableDeclaration()
+        {
+            tokensParser
+                .SetupSequence(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(false);
+
+            var result = parser.Parse();
+
+            result.Name.Should().Be(Consts.VARIABLES_DECLARATION);
+            result.Nodes.Should().BeEmpty();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenColonTokenIsNotFound()
         {
             tokensParser
@@ -35,19 +48,6 @@ namespace PascalDotNet.Lexer.Tests.Parsers
             Action action = () =>  parser.Parse();
 
             action.Should().Throw<UnExpectedTokenException>();
-        }
-        
-        [Test]
-        public void ReturnEmptyVariableDeclaration()
-        {
-            tokensParser
-                .SetupSequence(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
-                .Returns(false);
-
-            var result = parser.Parse();
-
-            result.Name.Should().Be(Consts.VARIABLES_DECLARATION);
-            result.Nodes.Should().BeEmpty();
         }
         
         [Test]
