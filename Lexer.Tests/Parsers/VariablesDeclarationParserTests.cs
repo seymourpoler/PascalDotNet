@@ -3,6 +3,7 @@ using System.Linq;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
+using PascalDotNet.Lexer.Exceptions;
 using PascalDotNet.Lexer.Parsers;
 using PascalDotNet.Lexer.Tokens;
 
@@ -19,6 +20,21 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         {
             tokensParser = new Mock<ITokensParser>();
             parser = new VariablesDeclarationParser(tokensParser.Object);
+        }
+
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenColonTokenIsNotFound()
+        {
+            tokensParser
+                .SetupSequence (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"));
+            
+            Action action = () =>  parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
         }
         
         [Test]
