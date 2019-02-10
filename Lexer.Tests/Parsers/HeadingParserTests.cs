@@ -23,7 +23,7 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
-        public void ThrowsUnExpectedTokenExceptionWhenProgramTokenIsMissingInProgramDeclaration()
+        public void ThrowsUnExpectedTokenExceptionWhenProgramTokenIsNotFound()
         {
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns (new IdentifierToken ("Test"))
@@ -35,7 +35,7 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
-        public void ThrowsUnExpectedTokenExceptionWhenIdentifierTokenIsMissingInProgramDeclaration()
+        public void ThrowsUnExpectedTokenExceptionWhenIdentifierTokenIsNotFound()
         {
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns (new ProgramToken ())
@@ -47,7 +47,7 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
-        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsMissingInProgramDeclaration()
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsNotFound()
         {
             tokensParser.SetupSequence (x => x.NextToken)
                 .Returns (new ProgramToken ())
