@@ -42,6 +42,10 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				var variableTypeToken = _tokensParser.NextToken;
+				if(!(token is KeyWordToken))
+				{
+					throw new UnExpectedTokenException ();
+				}
 				token = _tokensParser.NextToken;
 				if(!token.IsEqualsTo(new SemiColonToken()))
 				{
