@@ -6,5 +6,6 @@
 		bool IsAnOperator{get;}
 		Operator Operator{get;}
 		bool IsEqualsTo (IToken token);
+		bool IsNotEqualsTo (IToken token);
 	}
 }

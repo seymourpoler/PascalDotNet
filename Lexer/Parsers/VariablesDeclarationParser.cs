@@ -21,7 +21,7 @@ namespace PascalDotNet.Lexer.Parsers
 				return result;
 			}
 			var token = _tokensParser.NextToken;
-			if(!token.IsEqualsTo(new VarToken()))
+			if(token.IsNotEqualsTo(new VarToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -29,13 +29,13 @@ namespace PascalDotNet.Lexer.Parsers
 			while(_tokensParser.WhereTheNextToken (x => x is IdentifierToken))
 			{
 				var identifierToken = _tokensParser.NextToken;
-				if(!identifierToken.IsEqualsTo(new IdentifierToken(identifierToken.Value)))
+				if(identifierToken.IsNotEqualsTo(new IdentifierToken(identifierToken.Value)))
 				{
 					throw new UnExpectedTokenException ();
 				}
 
 				token = _tokensParser.NextToken;
-				if(!token.IsEqualsTo(new ColonToken()))
+				if(token.IsNotEqualsTo(new ColonToken()))
 				{
 					throw new UnExpectedTokenException ();
 				}
@@ -46,7 +46,7 @@ namespace PascalDotNet.Lexer.Parsers
 					throw new UnExpectedTokenException ();
 				}
 				token = _tokensParser.NextToken;
-				if(!token.IsEqualsTo(new SemiColonToken()))
+				if(token.IsNotEqualsTo(new SemiColonToken()))
 				{
 					throw new UnExpectedTokenException ();
 				}

@@ -20,7 +20,7 @@ namespace PascalDotNet.Lexer.Parsers
                 return result;
             }
             var token = _tokensParser.NextToken;
-            if (!token.IsEqualsTo(new TypeToken()))
+            if (token.IsNotEqualsTo(new TypeToken()))
             {
                 throw new UnExpectedTokenException();
             }
