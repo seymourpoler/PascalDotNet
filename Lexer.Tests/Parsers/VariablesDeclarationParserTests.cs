@@ -84,6 +84,24 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsNotFound()
+        {
+            tokensParser
+                .Setup(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true);
+            tokensParser.SetupSequence(x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"))
+                .Returns(new ColonToken())
+                .Returns(new KeyWordToken("INTEGER"))
+                .Returns(new EndOfFileToken ());
+            
+            Action action = () => parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
         public void ParseVariablesDeclaration()
         {
             tokensParser
