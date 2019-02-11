@@ -42,7 +42,8 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				var valueToken = _tokensParser.NextToken;
-				if (valueToken.IsNotTypeOf(typeof(DecimalToken)))
+				if (valueToken.IsNotTypeOf(typeof(DecimalToken)) || 
+				    valueToken.IsNotTypeOf(typeof(IntegerToken)))
 				{
 					throw new UnExpectedTokenException ();
 				}
