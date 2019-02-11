@@ -41,7 +41,7 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				var variableTypeToken = _tokensParser.NextToken;
-				if(!(token is KeyWordToken))
+				if(!(variableTypeToken is KeyWordToken))
 				{
 					throw new UnExpectedTokenException ();
 				}
