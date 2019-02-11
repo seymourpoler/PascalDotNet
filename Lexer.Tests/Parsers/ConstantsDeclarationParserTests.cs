@@ -69,6 +69,24 @@ namespace PascalDotNet.Lexer.Tests.Parsers
         }
         
         [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenDecimalTokenIsNotFound()
+        {
+            tokensParser
+                .Setup (x => x.WhereTheNextToken (It.IsAny<Func<IToken, bool>>()))
+                .Returns (true);
+            tokensParser.SetupSequence (x => x.NextToken)
+                .Returns(new ConstToken())
+                .Returns(new IdentifierToken("PI"))
+                .Returns(new EqualToken())
+                .Returns(new DecimalToken("3.14"))
+                .Returns(new EndOfFileToken());
+
+            Action action = () => parser.Parse ();
+
+            action.Should().Throw<UnExpectedTokenException> ();
+        }
+        
+        [Test]
         public void ThrowsUnExpectedTokenExceptionWhenSemiColonIsNotFound()
         {
             tokensParser

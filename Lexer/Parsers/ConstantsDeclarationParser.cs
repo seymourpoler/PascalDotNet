@@ -42,6 +42,10 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				var valueToken = _tokensParser.NextToken;
+				if (valueToken.IsNotTypeOf(typeof(DecimalToken)))
+				{
+					throw new UnExpectedTokenException ();
+				}
 				token = _tokensParser.NextToken;
 				if(token.IsNotTypeOf(typeof(SemiColonToken)))
 				{
