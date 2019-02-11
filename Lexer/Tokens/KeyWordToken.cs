@@ -1,4 +1,5 @@
-﻿using PascalDotNet.Lexer.Exceptions;
+﻿using System;
+using PascalDotNet.Lexer.Exceptions;
 
 namespace PascalDotNet.Lexer.Tokens
 {
@@ -27,6 +28,16 @@ namespace PascalDotNet.Lexer.Tokens
 		public bool IsNotEqualsTo(IToken token)
 		{
 			return !TokenComparator.Equals(this, token);
+		}
+		
+		public bool IsTypeOf(Type type)
+		{
+			return this.GetType() == type;
+		}
+
+		public bool IsNotTypeOf(Type type)
+		{
+			return this.GetType() != type;
 		}
 	}
 }

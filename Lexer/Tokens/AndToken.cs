@@ -1,4 +1,6 @@
-﻿namespace PascalDotNet.Lexer.Tokens
+﻿using System;
+
+namespace PascalDotNet.Lexer.Tokens
 {
 	public class AndToken : IToken
 	{
@@ -15,10 +17,20 @@
 		{
 			return TokenComparator.Equals(this, token);
 		}
-		
+
 		public bool IsNotEqualsTo(IToken token)
 		{
 			return !TokenComparator.Equals(this, token);
+		}
+
+		public bool IsTypeOf(Type type)
+		{
+			return this.GetType() == type;
+		}
+
+		public bool IsNotTypeOf(Type type)
+		{
+			return this.GetType() != type;
 		}
 	}
 }

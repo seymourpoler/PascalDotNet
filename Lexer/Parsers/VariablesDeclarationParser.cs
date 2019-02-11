@@ -26,29 +26,29 @@ namespace PascalDotNet.Lexer.Parsers
 				throw new UnExpectedTokenException ();
 			}
 
-			while(_tokensParser.WhereTheNextToken (x => x is IdentifierToken))
+			while(_tokensParser.WhereTheNextToken (x => x.IsTypeOf(typeof(IdentifierToken))))
 			{
 				var identifierToken = _tokensParser.NextToken;
 				if(identifierToken.IsNotEqualsTo(new IdentifierToken(identifierToken.Value)))
 				{
-					throw new UnExpectedTokenException ();
+					throw new UnExpectedTokenException();
 				}
 
 				token = _tokensParser.NextToken;
-				if(token.IsNotEqualsTo(new ColonToken()))
+				if(token.IsNotTypeOf(typeof(ColonToken)))
 				{
-					throw new UnExpectedTokenException ();
+					throw new UnExpectedTokenException();
 				}
 
 				var variableTypeToken = _tokensParser.NextToken;
-				if(!(variableTypeToken is KeyWordToken))
+				if(variableTypeToken.IsNotTypeOf(typeof(KeyWordToken)))
 				{
-					throw new UnExpectedTokenException ();
+					throw new UnExpectedTokenException();
 				}
 				token = _tokensParser.NextToken;
-				if(token.IsNotEqualsTo(new SemiColonToken()))
+				if(token.IsNotTypeOf(typeof(SemiColonToken)))
 				{
-					throw new UnExpectedTokenException ();
+					throw new UnExpectedTokenException();
 				}
 				
 				result.Add (new Node (

@@ -17,5 +17,15 @@ namespace PascalDotNet.Lexer.Tokens
 		{
 			return !TokenComparator.Equals(this, token);
 		}
+		
+		public bool IsTypeOf(Type type)
+		{
+			return this.GetType() == type;
+		}
+
+		public bool IsNotTypeOf(Type type)
+		{
+			return this.GetType() != type;
+		}
 	}
 }
