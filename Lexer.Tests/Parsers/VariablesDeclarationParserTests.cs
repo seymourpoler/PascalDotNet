@@ -34,6 +34,72 @@ namespace PascalDotNet.Lexer.Tests.Parsers
             result.Name.Should().Be(Consts.VARIABLES_DECLARATION);
             result.Nodes.Should().BeEmpty();
         }
+
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenIdentifierTokenIsNotFound()
+        {
+            tokensParser
+                .Setup(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true);
+            tokensParser.SetupSequence(x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new ColonToken());
+            
+            Action action = () => parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenColonTokenIsNotFound()
+        {
+            tokensParser
+                .Setup(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true);
+            tokensParser.SetupSequence(x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"))
+                .Returns(new KeyWordToken("INTEGER"));
+            
+            Action action = () => parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenKeyWordTokenIsNotFound()
+        {
+            tokensParser
+                .Setup(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true);
+            tokensParser.SetupSequence(x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"))
+                .Returns(new ColonToken())
+                .Returns(new SemiColonToken ());
+            
+            Action action = () => parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
+        
+        [Test]
+        public void ThrowsUnExpectedTokenExceptionWhenSemiColonTokenIsNotFound()
+        {
+            tokensParser
+                .Setup(x => x.WhereTheNextToken(It.IsAny<Func<IToken, bool>>()))
+                .Returns(true);
+            tokensParser.SetupSequence(x => x.NextToken)
+                .Returns(new VarToken())
+                .Returns(new IdentifierToken("position"))
+                .Returns(new ColonToken())
+                .Returns(new KeyWordToken("INTEGER"))
+                .Returns(new EndOfFileToken ());
+            
+            Action action = () => parser.Parse();
+
+            action.Should().Throw<UnExpectedTokenException>();
+        }
         
         [Test]
         public void ThrowsUnExpectedTokenExceptionWhenVarTokenIsNotFound()

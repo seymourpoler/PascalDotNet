@@ -15,6 +15,11 @@
 		{
 			return TokenComparator.Equals(this, token);
 		}
+		
+		public bool IsNotEqualsTo(IToken token)
+		{
+			return !TokenComparator.Equals(this, token);
+		}
 	}
 }
 

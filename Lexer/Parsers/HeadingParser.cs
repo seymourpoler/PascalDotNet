@@ -16,13 +16,13 @@ namespace PascalDotNet.Lexer.Parsers
 		public Node Parse()
 		{
 			var token = _tokensParser.NextToken;
-			if(!token.IsEqualsTo(new ProgramToken()))
+			if(token.IsNotEqualsTo(new ProgramToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
 
 			token = _tokensParser.NextToken;
-			if(!token.IsEqualsTo(new IdentifierToken(token.Value)))
+			if(token.IsNotEqualsTo(new IdentifierToken(token.Value)))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -32,7 +32,7 @@ namespace PascalDotNet.Lexer.Parsers
 				nodes: new List<Node> {new Node(token.Value)});
 
 			token = _tokensParser.NextToken;
-			if(!token.IsEqualsTo(new SemiColonToken()))
+			if(token.IsNotEqualsTo(new SemiColonToken()))
 			{
 				throw new UnExpectedTokenException ();
 			}
