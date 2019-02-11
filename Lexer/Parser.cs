@@ -4,14 +4,12 @@ namespace PascalDotNet.Lexer
 {
 	public class Parser
 	{
-		private readonly ITokensParser _tokensParser;
 		private readonly HeadingParser _headingParser;
 		private readonly ConstantsDeclarationParser _constantsDeclarationParser;
 		private readonly VariablesDeclarationParser _variablesDeclarationParser;
 
 		public Parser(ITokensParser tokensParser)
 		{
-			_tokensParser = tokensParser;
 			_headingParser = new HeadingParser (tokensParser);
 			_constantsDeclarationParser = new ConstantsDeclarationParser (tokensParser);
 			_variablesDeclarationParser = new VariablesDeclarationParser (tokensParser);
