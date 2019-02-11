@@ -17,12 +17,12 @@ namespace PascalDotNet.Lexer.Parsers
 		public Node Parse()
 		{
 			var result = new Node (Consts.CONSTANTS_DECLARATION);
-			if(!_tokensParser.WhereTheNextToken(x => x.IsEqualsTo(new ConstToken())))
+			if(!_tokensParser.WhereTheNextToken(x => x.IsNotTypeOf(typeof(ConstToken))))
 			{
 				return result;
 			}
 			var token = _tokensParser.NextToken;
-			if(token.IsNotEqualsTo(new ConstToken()))
+			if(token.IsNotTypeOf(typeof(ConstToken)))
 			{
 				throw new UnExpectedTokenException ();
 			}
@@ -36,14 +36,14 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				token = _tokensParser.NextToken;
-				if(token.IsNotEqualsTo(new EqualToken()))
+				if(token.IsNotTypeOf(typeof(EqualToken)))
 				{
 					throw new UnExpectedTokenException ();
 				}
 
 				var valueToken = _tokensParser.NextToken;
 				token = _tokensParser.NextToken;
-				if(token.IsNotEqualsTo(new SemiColonToken()))
+				if(token.IsNotTypeOf(typeof(SemiColonToken)))
 				{
 					throw new UnExpectedTokenException ();
 				}
