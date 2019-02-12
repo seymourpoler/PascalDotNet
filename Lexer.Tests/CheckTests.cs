@@ -14,5 +14,13 @@ namespace PascalDotNet.Lexer.Tests
 
             action.Should().Throw<Exception>();
         }
+        
+        [Test]
+        public void DoNotThrowExceptionWhenTheConditionIsFalse()
+        {
+            Action action = () => Check.ThrowIf<Exception>(() => false);
+
+            action.Should().NotThrow<Exception>();
+        }
     }
 }
