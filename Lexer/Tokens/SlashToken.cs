@@ -4,11 +4,19 @@ namespace PascalDotNet.Lexer.Tokens
 {
 	public class SlashToken : IToken
 	{
-		public string Value{ get; private set;}
-		public bool IsAnOperator{get{return true;}}
-		public Operator Operator{get{return Operator.Div;}}
+		public string Value { get; private set; }
 
-		public SlashToken (string value)
+		public bool IsAnOperator
+		{
+			get { return true; }
+		}
+
+		public Operator Operator
+		{
+			get { return Operator.Div; }
+		}
+
+		public SlashToken(string value)
 		{
 			Value = value;
 		}
@@ -17,20 +25,20 @@ namespace PascalDotNet.Lexer.Tokens
 		{
 			return TokenComparator.Equals(this, token);
 		}
-		
+
 		public bool IsNotEqualsTo(IToken token)
 		{
 			return !TokenComparator.Equals(this, token);
 		}
-		
-		public bool IsTypeOf(Type type)
+
+		public bool IsTypeOf<T>()
 		{
-			return this.GetType() == type;
+			return this.GetType() == typeof(T);
 		}
 
-		public bool IsNotTypeOf(Type type)
+		public bool IsNotTypeOf<T>()
 		{
-			return this.GetType() != type;
+			return this.GetType() != typeof(T);
 		}
 	}
 }

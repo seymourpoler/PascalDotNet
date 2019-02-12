@@ -24,14 +24,14 @@ namespace PascalDotNet.Lexer.Tokens
 			return !TokenComparator.Equals(this, token);
 		}
 		
-		public bool IsTypeOf(Type type)
+		public bool IsTypeOf<T>()
 		{
-			return this.GetType() == type;
+			return this.GetType() == typeof(T);
 		}
-		
-		public bool IsNotTypeOf(Type type)
+
+		public bool IsNotTypeOf<T>()
 		{
-			return this.GetType() != type;
+			return this.GetType() != typeof(T);
 		}
 	}
 }

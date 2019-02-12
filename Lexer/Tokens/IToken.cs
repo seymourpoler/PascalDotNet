@@ -9,7 +9,7 @@ namespace PascalDotNet.Lexer.Tokens
 		Operator Operator{get;}
 		bool IsEqualsTo (IToken token);
 		bool IsNotEqualsTo (IToken token);
-		bool IsTypeOf(Type type);
-		bool IsNotTypeOf(Type type);
+		bool IsTypeOf<T>();
+		bool IsNotTypeOf<T>();
 	}
 }

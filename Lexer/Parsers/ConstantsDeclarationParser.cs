@@ -17,14 +17,14 @@ namespace PascalDotNet.Lexer.Parsers
 		public Node Parse()
 		{
 			var result = new Node (Consts.CONSTANTS_DECLARATION);
-			if(!_tokensParser.WhereTheNextToken(x => x.IsNotTypeOf(typeof(ConstToken))))
+			if(!_tokensParser.WhereTheNextToken(x => x.IsNotTypeOf<ConstToken>()))
 			{
 				return result;
 			}
 			var token = _tokensParser.NextToken;
-			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(ConstToken)));
+			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<ConstToken>());
 
-			while(_tokensParser.WhereTheNextToken (x => x.IsNotTypeOf(typeof(IdentifierToken))))
+			while(_tokensParser.WhereTheNextToken (x => x.IsNotTypeOf<IdentifierToken>()))
 			{
 				var identifierToken = _tokensParser.NextToken;
 				if(identifierToken.IsNotEqualsTo(new IdentifierToken(identifierToken.Value)))
@@ -33,16 +33,16 @@ namespace PascalDotNet.Lexer.Parsers
 				}
 
 				token = _tokensParser.NextToken;
-				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(EqualToken)));
+				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<EqualToken>());
 
 				var valueToken = _tokensParser.NextToken;
 				Check.ThrowIf<UnExpectedTokenException>(() => 
-					valueToken.IsNotTypeOf(typeof(DecimalToken)) && 
-					valueToken.IsNotTypeOf(typeof(IntegerToken)) &&
-					valueToken.IsNotTypeOf(typeof(LiteralToken)));
+					valueToken.IsNotTypeOf<DecimalToken>() && 
+					valueToken.IsNotTypeOf<IntegerToken>() &&
+					valueToken.IsNotTypeOf<LiteralToken>());
 
 				token = _tokensParser.NextToken;
-				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(SemiColonToken)));
+				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<SemiColonToken>());
 
 				result.Add (new Node (
 					name: identifierToken.Value,
