@@ -19,11 +19,9 @@ namespace PascalDotNet.Lexer.Parsers
             {
                 return result;
             }
+
             var token = _tokensParser.NextToken;
-            if (token.IsNotTypeOf(typeof(TypeToken)))
-            {
-                throw new UnExpectedTokenException();
-            }
+            Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(TypeToken)));
 
             throw new System.NotImplementedException();
         }

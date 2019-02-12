@@ -16,26 +16,17 @@ namespace PascalDotNet.Lexer.Parsers
 		public Node Parse()
 		{
 			var token = _tokensParser.NextToken;
-			if(token.IsNotTypeOf(typeof(ProgramToken)))
-			{
-				throw new UnExpectedTokenException ();
-			}
+			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(ProgramToken)));
 
 			token = _tokensParser.NextToken;
-			if(token.IsNotEqualsTo(new IdentifierToken(token.Value)))
-			{
-				throw new UnExpectedTokenException ();
-			}
+			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotEqualsTo(new IdentifierToken(token.Value)));
 
 			var result = new Node(
 				name: Consts.PROGRAM_HEADING,
 				nodes: new List<Node> {new Node(token.Value)});
 
 			token = _tokensParser.NextToken;
-			if(token.IsNotTypeOf(typeof(SemiColonToken)))
-			{
-				throw new UnExpectedTokenException ();
-			}
+			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(SemiColonToken)));
 
 			return result;
 		}

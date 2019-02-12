@@ -21,35 +21,22 @@ namespace PascalDotNet.Lexer.Parsers
 				return result;
 			}
 			var token = _tokensParser.NextToken;
-			if(token.IsNotTypeOf(typeof(VarToken)))
-			{
-				throw new UnExpectedTokenException ();
-			}
+			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(VarToken)));
 
 			while(_tokensParser.WhereTheNextToken (x => x.IsTypeOf(typeof(IdentifierToken))))
 			{
 				var identifierToken = _tokensParser.NextToken;
-				if(identifierToken.IsNotEqualsTo(new IdentifierToken(identifierToken.Value)))
-				{
-					throw new UnExpectedTokenException();
-				}
+				Check.ThrowIf<UnExpectedTokenException>(() => 
+					identifierToken.IsNotEqualsTo(new IdentifierToken(identifierToken.Value)));
 
 				token = _tokensParser.NextToken;
-				if(token.IsNotTypeOf(typeof(ColonToken)))
-				{
-					throw new UnExpectedTokenException();
-				}
+				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(ColonToken)));
 
 				var variableTypeToken = _tokensParser.NextToken;
-				if(variableTypeToken.IsNotTypeOf(typeof(KeyWordToken)))
-				{
-					throw new UnExpectedTokenException();
-				}
+				Check.ThrowIf<UnExpectedTokenException>(() => variableTypeToken.IsNotTypeOf(typeof(KeyWordToken)));
+
 				token = _tokensParser.NextToken;
-				if(token.IsNotTypeOf(typeof(SemiColonToken)))
-				{
-					throw new UnExpectedTokenException();
-				}
+				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(SemiColonToken)));
 				
 				result.Add (new Node (
 					name: identifierToken.Value,
