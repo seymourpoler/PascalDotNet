@@ -8,7 +8,7 @@ namespace PascalDotNet.Lexer.Tests
     public class CheckTests
     {
         [Test]
-        public void ThrowsExceptionWhenTheConditionIsFalse()
+        public void ThrowExceptionWhenTheConditionIsFalse()
         {
             Action action = () => Check.ThrowIf<Exception>(() => true);
 
