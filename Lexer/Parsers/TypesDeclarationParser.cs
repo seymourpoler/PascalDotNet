@@ -15,13 +15,13 @@ namespace PascalDotNet.Lexer.Parsers
         public Node Parse()
         {
             var result = new Node(Consts.TYPES_DECLARATION);
-            if (!_tokensParser.WhereTheNextToken(x => x.IsTypeOf(typeof(TypeToken))))
+            if (!_tokensParser.WhereTheNextToken(x => x.IsTypeOf<TypeToken>()))
             {
                 return result;
             }
 
             var token = _tokensParser.NextToken;
-            Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(TypeToken)));
+            Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<TypeToken>());
 
             throw new System.NotImplementedException();
         }

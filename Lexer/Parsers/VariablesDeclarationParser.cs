@@ -16,27 +16,27 @@ namespace PascalDotNet.Lexer.Parsers
 		public Node Parse()
 		{
 			var result = new Node (Consts.VARIABLES_DECLARATION);
-			if(!_tokensParser.WhereTheNextToken(x => x.IsTypeOf(typeof(VarToken))))
+			if(!_tokensParser.WhereTheNextToken(x => x.IsTypeOf<VarToken>()))
 			{
 				return result;
 			}
 			var token = _tokensParser.NextToken;
-			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(VarToken)));
+			Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<VarToken>());
 
-			while(_tokensParser.WhereTheNextToken (x => x.IsTypeOf(typeof(IdentifierToken))))
+			while(_tokensParser.WhereTheNextToken (x => x.IsTypeOf<IdentifierToken>()))
 			{
 				var identifierToken = _tokensParser.NextToken;
 				Check.ThrowIf<UnExpectedTokenException>(() => 
 					identifierToken.IsNotEqualsTo(new IdentifierToken(identifierToken.Value)));
 
 				token = _tokensParser.NextToken;
-				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(ColonToken)));
+				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<ColonToken>());
 
 				var variableTypeToken = _tokensParser.NextToken;
-				Check.ThrowIf<UnExpectedTokenException>(() => variableTypeToken.IsNotTypeOf(typeof(KeyWordToken)));
+				Check.ThrowIf<UnExpectedTokenException>(() => variableTypeToken.IsNotTypeOf<KeyWordToken>());
 
 				token = _tokensParser.NextToken;
-				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf(typeof(SemiColonToken)));
+				Check.ThrowIf<UnExpectedTokenException>(() => token.IsNotTypeOf<SemiColonToken>());
 				
 				result.Add (new Node (
 					name: identifierToken.Value,
